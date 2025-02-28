@@ -1,12 +1,10 @@
 import './globals.css';
 
+import { PrismicPreview } from '@prismicio/next';
 import { Inter } from 'next/font/google';
-import { asText } from '@prismicio/client';
-import { PrismicText } from '@prismicio/react';
-import { PrismicNextLink, PrismicPreview } from '@prismicio/next';
 
-import { createClient, repositoryName } from '@/prismicio';
-import { Bounded } from '@/components/Bounded';
+import Footer from '@/components/layout/Footer/Footer';
+import { repositoryName } from '@/prismicio';
 import Header from '../components/layout/Navigation/Header';
 
 const inter = Inter({
@@ -20,9 +18,10 @@ export default async function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<html lang='en' className={inter.variable}>
-			<body className='overflow-x-hidden antialiased'>
+			<body className='overflow-x-hidden antialiased w-screen'>
 				<Header />
 				{children}
+				<Footer />
 				<PrismicPreview repositoryName={repositoryName} />
 			</body>
 		</html>

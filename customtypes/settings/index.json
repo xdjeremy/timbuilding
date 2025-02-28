@@ -22,6 +22,28 @@
           "constraint": {},
           "thumbnails": []
         }
+      },
+      "privacy_policy": {
+        "type": "Link",
+        "config": {
+          "label": "Privacy Policy",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": true,
+          "allowText": false,
+          "repeat": false
+        }
+      },
+      "terms_of_service": {
+        "type": "Link",
+        "config": {
+          "label": "Terms of Service",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": true,
+          "allowText": false,
+          "repeat": false
+        }
       }
     }
   }

@@ -1,11 +1,6 @@
 'use server';
 
-import React from 'react';
-import { Bounded } from '../../Bounded';
-import { PrismicNextLink } from '@prismicio/next';
-import { PrismicText } from '@prismicio/react';
-import { createClient } from '../../../prismicio';
-import { asText } from '@prismicio/client';
+import { createClient } from '@/prismicio';
 import Navigation from './Navigation';
 
 const Header = async () => {
