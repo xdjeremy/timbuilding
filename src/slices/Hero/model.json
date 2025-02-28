@@ -11,13 +11,22 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "Hero",
       "primary": {
-        "text": {
+        "title": {
           "type": "StructuredText",
           "config": {
-            "label": "Text",
+            "label": "Title",
+            "placeholder": "Use bold to turn it to yellow",
+            "allowTargetBlank": false,
+            "single": "heading1,strong"
+          }
+        },
+        "subtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Subtitle",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,heading1,strong,em"
+            "multi": "paragraph"
           }
         },
         "buttonLink": {
@@ -35,12 +44,21 @@
             "placeholder": ""
           }
         },
-        "backgroundImage": {
-          "type": "Image",
+        "images": {
+          "type": "Group",
           "config": {
-            "label": "Background Image",
-            "constraint": {},
-            "thumbnails": []
+            "label": "Images",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
           }
         }
       },

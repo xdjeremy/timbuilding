@@ -40,7 +40,7 @@ const Footer = async () => {
 							<div className='relative flex size-full items-center'>
 								<input
 									type='email'
-									className='flex size-fullƒ min-h-11 border border-border-primary bg-background-primary py-2 align-middle file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 px-3'
+									className='flex size-full min-h-11 border border-border-primary bg-background-primary py-2 align-middle file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 px-3'
 									id='email'
 									placeholder='Enter your email'
 									value=''

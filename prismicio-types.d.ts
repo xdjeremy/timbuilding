@@ -233,18 +233,43 @@ export type AllDocumentTypes =
   | SettingsDocument;
 
 /**
+ * Item in *Hero → Default → Primary → Images*
+ */
+export interface HeroSliceDefaultPrimaryImagesItem {
+  /**
+   * Image field in *Hero → Default → Primary → Images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.images[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
   /**
-   * Text field in *Hero → Default → Primary*
+   * Title field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Use bold to turn it to yellow
+   * - **API ID Path**: hero.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *Hero → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.text
+   * - **API ID Path**: hero.default.primary.subtitle
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text: prismic.RichTextField;
+  subtitle: prismic.RichTextField;
 
   /**
    * Button Link field in *Hero → Default → Primary*
@@ -273,14 +298,14 @@ export interface HeroSliceDefaultPrimary {
   buttonText: prismic.KeyTextField;
 
   /**
-   * Background Image field in *Hero → Default → Primary*
+   * Images field in *Hero → Default → Primary*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.backgroundImage
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **API ID Path**: hero.default.primary.images[]
+   * - **Documentation**: https://prismic.io/docs/field#group
    */
-  backgroundImage: prismic.ImageField<never>;
+  images: prismic.GroupField<Simplify<HeroSliceDefaultPrimaryImagesItem>>;
 }
 
 /**
@@ -760,6 +785,7 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       AllDocumentTypes,
       HeroSlice,
+      HeroSliceDefaultPrimaryImagesItem,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
