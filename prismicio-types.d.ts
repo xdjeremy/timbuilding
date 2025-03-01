@@ -464,6 +464,108 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *Highlight → Default → Primary → Highlight*
+ */
+export interface HighlightSliceDefaultPrimaryHighlightItem {
+  /**
+   * Title field in *Highlight → Default → Primary → Highlight*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Use bold for highlighting
+   * - **API ID Path**: highlight.default.primary.highlight[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Highlight → Default → Primary → Highlight*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlight.default.primary.highlight[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Highlight → Default → Primary*
+ */
+export interface HighlightSliceDefaultPrimary {
+  /**
+   * Image field in *Highlight → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlight.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *Highlight → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Use bold for highlighting
+   * - **API ID Path**: highlight.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Highlight → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlight.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Highlight field in *Highlight → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlight.default.primary.highlight[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  highlight: prismic.GroupField<
+    Simplify<HighlightSliceDefaultPrimaryHighlightItem>
+  >;
+}
+
+/**
+ * Default variation for Highlight Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HighlightSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HighlightSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Highlight*
+ */
+type HighlightSliceVariation = HighlightSliceDefault;
+
+/**
+ * Highlight Shared Slice
+ *
+ * - **API ID**: `highlight`
+ * - **Description**: Highlight
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HighlightSlice = prismic.SharedSlice<
+  "highlight",
+  HighlightSliceVariation
+>;
+
+/**
  * Primary content in *Image → Default → Primary*
  */
 export interface ImageSliceDefaultPrimary {
@@ -922,6 +1024,11 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      HighlightSlice,
+      HighlightSliceDefaultPrimaryHighlightItem,
+      HighlightSliceDefaultPrimary,
+      HighlightSliceVariation,
+      HighlightSliceDefault,
       ImageSlice,
       ImageSliceDefaultPrimary,
       ImageSliceBannerPrimary,
