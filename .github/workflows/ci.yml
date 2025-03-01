@@ -2,9 +2,13 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "!main" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "!main" ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   lint-and-build:
