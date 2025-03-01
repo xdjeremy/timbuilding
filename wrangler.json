@@ -1,19 +1,17 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "main": ".open-next/worker.js",
-  "name": "timbuilding",
-  "compatibility_date": "2025-02-24",
-  "compatibility_flags": ["nodejs_compat"],
-  "assets": {
-    "directory": ".open-next/assets",
-    "binding": "ASSETS"
-  },
-  "kv_namespaces": [
-    // Create a KV binding with the binding name "NEXT_CACHE_WORKERS_KV"
-    // to enable the KV based caching:
-    // {
-    //   "binding": "NEXT_CACHE_WORKERS_KV",
-    //   "id": "<BINDING_ID>"
-    // }
-  ]
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"main": ".open-next/worker.js",
+	"name": "timbuilding",
+	"compatibility_date": "2025-02-24",
+	"compatibility_flags": ["nodejs_compat"],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	"kv_namespaces": [
+		{
+			"binding": "timbuilding",
+			"id": "420fc217dc8f44c188e17785a8eb6272"
+		}
+	]
 }
