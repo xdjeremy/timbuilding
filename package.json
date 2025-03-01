@@ -11,10 +11,7 @@
 		"start": "next start",
 		"lint": "next lint",
 		"slicemachine": "start-slicemachine",
-		"format": "prettier --write .",
-		"preview": "opennextjs-cloudflare && wrangler dev",
-		"deploy": "opennextjs-cloudflare && wrangler deploy",
-		"cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+		"format": "prettier --write ."
 	},
 	"dependencies": {
 		"@prismicio/client": "^7.16.1",
