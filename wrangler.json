@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "main": ".open-next/worker.js",
-  "name": "nextjs-starter-prismic-multi-page",
+  "name": "timbuilding",
   "compatibility_date": "2025-02-24",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
