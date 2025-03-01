@@ -34,8 +34,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-.open-next
+
 #webstorm
 .idea
 .idea/*
 .idea/workspace.xml
+
+.open-next
