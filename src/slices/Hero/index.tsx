@@ -1,7 +1,7 @@
 'use server';
 
 import { type Content } from '@prismicio/client';
-import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
+import { PrismicNextLink } from '@prismicio/next';
 import { type SliceComponentProps } from '@prismicio/react';
 import { FC } from 'react';
 
@@ -10,8 +10,8 @@ import { PrismicRichText } from '@/components/PrismicRichText';
 import { components } from '@/slices/Hero/HeroRichText';
 
 import { BlueStar2, PinkStar } from '@/constants/icons';
-import { HeroImageGrid } from '@/slices/Hero/HeroImageGrid';
 import { HeroDecorations } from '@/slices/Hero/HeroDecorations';
+import { HeroImageGrid } from '@/slices/Hero/HeroImageGrid';
 
 type HeroProps = SliceComponentProps<Content.HeroSlice>;
 

@@ -21,8 +21,8 @@ export default async function RootLayout({
 			<body className='overflow-x-hidden antialiased w-screen'>
 				<Header />
 				{children}
-				<Footer />
 				<PrismicPreview repositoryName={repositoryName} />
+				<Footer />
 			</body>
 		</html>
 	);
