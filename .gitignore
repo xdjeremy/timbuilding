@@ -36,3 +36,7 @@ yarn-error.log*
 next-env.d.ts
 .dev.vars
 .open-next
+#webstorm
+.idea
+.idea/*
+.idea/workspace.xml
