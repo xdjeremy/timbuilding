@@ -35,22 +35,19 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "process_overview": {
+              "type": "SharedSlice"
+            },
+            "call_to_action": {
+              "type": "SharedSlice"
+            },
+            "highlight": {
+              "type": "SharedSlice"
+            },
+            "features": {
+              "type": "SharedSlice"
+            },
             "hero": {
-              "type": "SharedSlice"
-            },
-            "quote": {
-              "type": "SharedSlice"
-            },
-            "text": {
-              "type": "SharedSlice"
-            },
-            "image": {
-              "type": "SharedSlice"
-            },
-            "image_cards": {
-              "type": "SharedSlice"
-            },
-            "text_with_image": {
               "type": "SharedSlice"
             }
           }

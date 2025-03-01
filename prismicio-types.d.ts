@@ -62,12 +62,11 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
-  | HeroSlice
-  | QuoteSlice
-  | TextSlice
-  | ImageSlice
-  | ImageCardsSlice
-  | TextWithImageSlice;
+  | ProcessOverviewSlice
+  | CallToActionSlice
+  | HighlightSlice
+  | FeaturesSlice
+  | HeroSlice;
 
 /**
  * Content for Page documents
