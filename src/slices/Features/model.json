@@ -57,7 +57,7 @@
                   "label": "Title",
                   "placeholder": "",
                   "allowTargetBlank": true,
-                  "multi": "heading4"
+                  "multi": "heading3"
                 }
               },
               "description": {

@@ -57,12 +57,10 @@
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
-											"type": "heading4",
+											"type": "heading3",
 											"content": {
-												"text": "Custom Web Development for Your Unique Needs",
-												"spans": []
-											},
-											"direction": "ltr"
+												"text": "Outer"
+											}
 										}
 									]
 								}
@@ -121,12 +119,10 @@
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
-											"type": "heading4",
+											"type": "heading3",
 											"content": {
-												"text": "Tailored Applications to Streamline Your Operations",
-												"spans": []
-											},
-											"direction": "ltr"
+												"text": "Forty"
+											}
 										}
 									]
 								}
@@ -158,12 +154,10 @@
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
-											"type": "heading4",
+											"type": "heading3",
 											"content": {
-												"text": "Comprehensive Marketing Services to Boost Visibility",
-												"spans": []
-											},
-											"direction": "ltr"
+												"text": "Dirty"
+											}
 										}
 									]
 								}
