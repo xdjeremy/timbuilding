@@ -8,6 +8,7 @@ export const components = {
   highlight: dynamic(() => import("./Highlight")),
   image: dynamic(() => import("./Image")),
   image_cards: dynamic(() => import("./ImageCards")),
+  process_overview: dynamic(() => import("./ProcessOverview")),
   quote: dynamic(() => import("./Quote")),
   text: dynamic(() => import("./Text")),
   text_with_image: dynamic(() => import("./TextWithImage")),
