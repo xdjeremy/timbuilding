@@ -24,6 +24,13 @@
     border-radius: 1.5rem; /* rounded-3xl equivalent */
 }
 
+@utility neobrutalist-shadow-left {
+	box-shadow: -15px 15px 0px 0px #000; /* Shadow to the left */
+	border: 7px solid #000; /* Increased border size */
+	border-radius: 1.5rem; /* rounded-3xl equivalent */
+	background-color: white;
+}
+
 @utility highlight {
     position: relative;
     &::after {

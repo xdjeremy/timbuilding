@@ -904,6 +904,128 @@ export type ImageCardsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Process → Default → Primary → Steps*
+ */
+export interface ProcessSliceDefaultPrimaryStepsItem {
+  /**
+   * Icon field in *Process → Default → Primary → Steps*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.steps[].icon
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon: prismic.SelectField<
+    "messageCircleMore" | "penTool" | "code2" | "rocket"
+  >;
+
+  /**
+   * Text field in *Process → Default → Primary → Steps*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.steps[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Subtext field in *Process → Default → Primary → Steps*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.steps[].subtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtext: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Process → Default → Primary*
+ */
+export interface ProcessSliceDefaultPrimary {
+  /**
+   * Badge field in *Process → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.badge
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  badge: prismic.KeyTextField;
+
+  /**
+   * Title field in *Process → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Process → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Image field in *Process → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Steps field in *Process → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.steps[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  steps: prismic.GroupField<Simplify<ProcessSliceDefaultPrimaryStepsItem>>;
+}
+
+/**
+ * Default variation for Process Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProcessSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProcessSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Process*
+ */
+type ProcessSliceVariation = ProcessSliceDefault;
+
+/**
+ * Process Shared Slice
+ *
+ * - **API ID**: `process`
+ * - **Description**: Process
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProcessSlice = prismic.SharedSlice<
+  "process",
+  ProcessSliceVariation
+>;
+
+/**
  * Item in *ProcessOverview → Default → Primary → Process*
  */
 export interface ProcessOverviewSliceDefaultPrimaryProcessItem {
@@ -1561,6 +1683,11 @@ declare module "@prismicio/client" {
       ImageCardsSliceDefaultPrimary,
       ImageCardsSliceVariation,
       ImageCardsSliceDefault,
+      ProcessSlice,
+      ProcessSliceDefaultPrimaryStepsItem,
+      ProcessSliceDefaultPrimary,
+      ProcessSliceVariation,
+      ProcessSliceDefault,
       ProcessOverviewSlice,
       ProcessOverviewSliceDefaultPrimaryProcessItem,
       ProcessOverviewSliceDefaultPrimary,
