@@ -51,6 +51,181 @@
             "allowTargetBlank": true,
             "multi": "paragraph,heading2,rtl"
           }
+        },
+        "header_button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Header Button Text",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "pageHeaderNoButtons",
+      "name": "PageHeader-no buttons",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "page_header": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Page Header",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "page_sub_header": {
+          "type": "Text",
+          "config": {
+            "label": "Page Sub header",
+            "placeholder": ""
+          }
+        },
+        "page_header_background": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Page Header Background",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2,rtl"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "pageHeaderNoBg",
+      "name": "PageHeaderNoBG",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "page_header": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Page Header",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2,heading3"
+          }
+        },
+        "page_sub_header": {
+          "type": "Text",
+          "config": {
+            "label": "Page Sub header",
+            "placeholder": ""
+          }
+        },
+        "header_button": {
+          "type": "Link",
+          "config": {
+            "label": "Header Button",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false,
+            "variants": [
+              "Primary",
+              "Secondary"
+            ]
+          }
+        },
+        "page_header_background": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Page Header Background",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2,rtl,heading4"
+          }
+        },
+        "header_button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Header Button Text",
+            "placeholder": ""
+          }
+        },
+        "badge_group": {
+          "type": "Group",
+          "config": {
+            "label": "Badge Group",
+            "repeat": true,
+            "fields": {
+              "badge_text": {
+                "type": "Text",
+                "config": {
+                  "label": "Badge Text",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "pageHeaderTwoShadows",
+      "name": "Page Header-Two Shadows",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "page_header": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Page Header",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "page_sub_header": {
+          "type": "Text",
+          "config": {
+            "label": "Page Sub header",
+            "placeholder": ""
+          }
+        },
+        "header_button": {
+          "type": "Link",
+          "config": {
+            "label": "Header Button",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false,
+            "variants": [
+              "Primary",
+              "Secondary"
+            ]
+          }
+        },
+        "page_header_background": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Page Header Background",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2"
+          }
+        },
+        "header_button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Header Button Text",
+            "placeholder": ""
+          }
         }
       },
       "items": {}

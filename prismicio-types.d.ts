@@ -445,6 +445,21 @@ export type FeaturesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Header → PageHeaderNoBG → Primary → Badge Group*
+ */
+export interface HeaderSlicePageHeaderNoBgPrimaryBadgeGroupItem {
+  /**
+   * Badge Text field in *Header → PageHeaderNoBG → Primary → Badge Group*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.pageHeaderNoBg.primary.badge_group[].badge_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  badge_text: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *Header → Default → Primary*
  */
 export interface HeaderSliceDefaultPrimary {
@@ -493,6 +508,16 @@ export interface HeaderSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   page_header_background: prismic.RichTextField;
+
+  /**
+   * Header Button Text field in *Header → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.default.primary.header_button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  header_button_text: prismic.KeyTextField;
 }
 
 /**
@@ -509,9 +534,221 @@ export type HeaderSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Header → PageHeader-no buttons → Primary*
+ */
+export interface HeaderSlicePageHeaderNoButtonsPrimary {
+  /**
+   * Page Header field in *Header → PageHeader-no buttons → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.pageHeaderNoButtons.primary.page_header
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  page_header: prismic.RichTextField;
+
+  /**
+   * Page Sub header field in *Header → PageHeader-no buttons → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.pageHeaderNoButtons.primary.page_sub_header
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  page_sub_header: prismic.KeyTextField;
+
+  /**
+   * Page Header Background field in *Header → PageHeader-no buttons → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.pageHeaderNoButtons.primary.page_header_background
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  page_header_background: prismic.RichTextField;
+}
+
+/**
+ * PageHeader-no buttons variation for Header Slice
+ *
+ * - **API ID**: `pageHeaderNoButtons`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeaderSlicePageHeaderNoButtons = prismic.SharedSliceVariation<
+  "pageHeaderNoButtons",
+  Simplify<HeaderSlicePageHeaderNoButtonsPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Header → PageHeaderNoBG → Primary*
+ */
+export interface HeaderSlicePageHeaderNoBgPrimary {
+  /**
+   * Page Header field in *Header → PageHeaderNoBG → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.pageHeaderNoBg.primary.page_header
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  page_header: prismic.RichTextField;
+
+  /**
+   * Page Sub header field in *Header → PageHeaderNoBG → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.pageHeaderNoBg.primary.page_sub_header
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  page_sub_header: prismic.KeyTextField;
+
+  /**
+   * Header Button field in *Header → PageHeaderNoBG → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.pageHeaderNoBg.primary.header_button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  header_button: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    "Primary" | "Secondary"
+  >;
+
+  /**
+   * Page Header Background field in *Header → PageHeaderNoBG → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.pageHeaderNoBg.primary.page_header_background
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  page_header_background: prismic.RichTextField;
+
+  /**
+   * Header Button Text field in *Header → PageHeaderNoBG → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.pageHeaderNoBg.primary.header_button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  header_button_text: prismic.KeyTextField;
+
+  /**
+   * Badge Group field in *Header → PageHeaderNoBG → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.pageHeaderNoBg.primary.badge_group[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  badge_group: prismic.GroupField<
+    Simplify<HeaderSlicePageHeaderNoBgPrimaryBadgeGroupItem>
+  >;
+}
+
+/**
+ * PageHeaderNoBG variation for Header Slice
+ *
+ * - **API ID**: `pageHeaderNoBg`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeaderSlicePageHeaderNoBg = prismic.SharedSliceVariation<
+  "pageHeaderNoBg",
+  Simplify<HeaderSlicePageHeaderNoBgPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Header → Page Header-Two Shadows → Primary*
+ */
+export interface HeaderSlicePageHeaderTwoShadowsPrimary {
+  /**
+   * Page Header field in *Header → Page Header-Two Shadows → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.pageHeaderTwoShadows.primary.page_header
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  page_header: prismic.RichTextField;
+
+  /**
+   * Page Sub header field in *Header → Page Header-Two Shadows → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.pageHeaderTwoShadows.primary.page_sub_header
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  page_sub_header: prismic.KeyTextField;
+
+  /**
+   * Header Button field in *Header → Page Header-Two Shadows → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.pageHeaderTwoShadows.primary.header_button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  header_button: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    "Primary" | "Secondary"
+  >;
+
+  /**
+   * Page Header Background field in *Header → Page Header-Two Shadows → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.pageHeaderTwoShadows.primary.page_header_background
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  page_header_background: prismic.RichTextField;
+
+  /**
+   * Header Button Text field in *Header → Page Header-Two Shadows → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.pageHeaderTwoShadows.primary.header_button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  header_button_text: prismic.KeyTextField;
+}
+
+/**
+ * Page Header-Two Shadows variation for Header Slice
+ *
+ * - **API ID**: `pageHeaderTwoShadows`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeaderSlicePageHeaderTwoShadows = prismic.SharedSliceVariation<
+  "pageHeaderTwoShadows",
+  Simplify<HeaderSlicePageHeaderTwoShadowsPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Header*
  */
-type HeaderSliceVariation = HeaderSliceDefault;
+type HeaderSliceVariation =
+  | HeaderSliceDefault
+  | HeaderSlicePageHeaderNoButtons
+  | HeaderSlicePageHeaderNoBg
+  | HeaderSlicePageHeaderTwoShadows;
 
 /**
  * Header Shared Slice
@@ -1772,8 +2009,15 @@ declare module "@prismicio/client" {
       FeaturesSliceDefault,
       HeaderSlice,
       HeaderSliceDefaultPrimary,
+      HeaderSlicePageHeaderNoButtonsPrimary,
+      HeaderSlicePageHeaderNoBgPrimaryBadgeGroupItem,
+      HeaderSlicePageHeaderNoBgPrimary,
+      HeaderSlicePageHeaderTwoShadowsPrimary,
       HeaderSliceVariation,
       HeaderSliceDefault,
+      HeaderSlicePageHeaderNoButtons,
+      HeaderSlicePageHeaderNoBg,
+      HeaderSlicePageHeaderTwoShadows,
       HeroSlice,
       HeroSliceDefaultPrimaryImagesItem,
       HeroSliceDefaultPrimary,

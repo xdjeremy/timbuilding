@@ -9,15 +9,17 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Everywhere"
-						}
+							"text": "Your Online Success",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
 			"page_sub_header": {
 				"__TYPE__": "FieldContent",
-				"value": "feed",
-				"type": "Text"
+				"type": "Text",
+				"value": "At TimBuilding, we empower small to medium businesses to thrive in the digital landscape."
 			},
 			"header_button": {
 				"key": "d85aba52-ad36-4d56-a215-7bf8212741f8",
@@ -35,12 +37,222 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Occaecat nisi eiusmod sunt id in incididunt sit pariatur ex minim nulla pariatur."
-						}
+							"text": "EMPOWER",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"header_button_text": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Learn more"
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "pageHeaderNoButtons",
+		"primary": {
+			"page_header": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Elevate Your Online Presence",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"page_sub_header": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Transform your business with custom landing pages and marketing websites designed for success."
+			},
+			"page_header_background": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "ELEVATE",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			}
 		},
-		"items": []
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "pageHeaderNoBg",
+		"primary": {
+			"page_header": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "WEB SOLUTIONS",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"page_sub_header": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Transforming business ideas into engaging websites that drive results for our clients."
+			},
+			"header_button": {
+				"key": "1568ad4d-6967-42f2-8858-17af4c60a86a",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io",
+					"text": "bet",
+					"variant": "Primary"
+				}
+			},
+			"page_header_background": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading4",
+						"content": {
+							"text": "INNOVATIVE",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"header_button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "empty",
+				"type": "Text"
+			},
+			"badge_group": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"badge_text",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Web Development"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"badge_text",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Custom Applications"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"badge_text",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Digital Marketing"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "pageHeaderTwoShadows",
+		"primary": {
+			"page_header": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Transparent Pricing \nPlans",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"page_sub_header": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Experience comprehensive web development services for just 3,500 PHP per month with TimBuilding."
+			},
+			"header_button": {
+				"key": "18cb6227-a532-484f-a8b1-24453d3aa541",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "rapidly",
+					"variant": "Secondary"
+				}
+			},
+			"page_header_background": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Affordable",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"header_button_text": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Learn More"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]
