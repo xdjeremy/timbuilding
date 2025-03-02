@@ -3,6 +3,7 @@ import { Content } from '@prismicio/client';
 import { SliceComponentProps } from '@prismicio/react';
 import LeftImage1 from './LeftImage1';
 import RightImage1 from './RightImage1';
+import LeftImage2 from './LeftImage2';
 
 /**
  * Props for `Service`.
@@ -17,6 +18,7 @@ const Service: FC<ServiceProps> = (slice) => {
 		<>
 			<LeftImage1 {...slice} />
 			<RightImage1 {...slice} />
+			<LeftImage2 {...slice} />
 		</>
 	);
 };

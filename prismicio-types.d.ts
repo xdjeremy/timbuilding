@@ -1219,9 +1219,80 @@ export type ServiceSliceRightImage1 = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Service → Left Image 2 → Primary*
+ */
+export interface ServiceSliceLeftImage2Primary {
+  /**
+   * Badge field in *Service → Left Image 2 → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.leftImage2.primary.badge
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  badge: prismic.KeyTextField;
+
+  /**
+   * Image field in *Service → Left Image 2 → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.leftImage2.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *Service → Left Image 2 → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.leftImage2.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Service → Left Image 2 → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.leftImage2.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button field in *Service → Left Image 2 → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.leftImage2.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Left Image 2 variation for Service Slice
+ *
+ * - **API ID**: `leftImage2`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceSliceLeftImage2 = prismic.SharedSliceVariation<
+  "leftImage2",
+  Simplify<ServiceSliceLeftImage2Primary>,
+  never
+>;
+
+/**
  * Slice variation for *Service*
  */
-type ServiceSliceVariation = ServiceSliceDefault | ServiceSliceRightImage1;
+type ServiceSliceVariation =
+  | ServiceSliceDefault
+  | ServiceSliceRightImage1
+  | ServiceSliceLeftImage2;
 
 /**
  * Service Shared Slice
@@ -1503,9 +1574,11 @@ declare module "@prismicio/client" {
       ServiceSliceDefaultPrimaryItemsItem,
       ServiceSliceDefaultPrimary,
       ServiceSliceRightImage1Primary,
+      ServiceSliceLeftImage2Primary,
       ServiceSliceVariation,
       ServiceSliceDefault,
       ServiceSliceRightImage1,
+      ServiceSliceLeftImage2,
       TextSlice,
       TextSliceDefaultPrimary,
       TextSliceTwoColumnsPrimary,
