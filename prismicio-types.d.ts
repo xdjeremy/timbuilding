@@ -1048,6 +1048,194 @@ type QuoteSliceVariation = QuoteSliceDefault;
 export type QuoteSlice = prismic.SharedSlice<"quote", QuoteSliceVariation>;
 
 /**
+ * Item in *Service → Left Image 1 → Primary → Items*
+ */
+export interface ServiceSliceDefaultPrimaryItemsItem {
+  /**
+   * Icon field in *Service → Left Image 1 → Primary → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.default.primary.items[].icon
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon: prismic.SelectField<"settings" | "monitorsmartphone" | "search">;
+
+  /**
+   * Text field in *Service → Left Image 1 → Primary → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.default.primary.items[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Service → Left Image 1 → Primary*
+ */
+export interface ServiceSliceDefaultPrimary {
+  /**
+   * Badge field in *Service → Left Image 1 → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.default.primary.badge
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  badge: prismic.KeyTextField;
+
+  /**
+   * Image field in *Service → Left Image 1 → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *Service → Left Image 1 → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Service → Left Image 1 → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Items field in *Service → Left Image 1 → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.default.primary.items[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  items: prismic.GroupField<Simplify<ServiceSliceDefaultPrimaryItemsItem>>;
+
+  /**
+   * Button field in *Service → Left Image 1 → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.default.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Left Image 1 variation for Service Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServiceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Service → Right Image 1 → Primary*
+ */
+export interface ServiceSliceRightImage1Primary {
+  /**
+   * Badge field in *Service → Right Image 1 → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.rightImage1.primary.badge
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  badge: prismic.KeyTextField;
+
+  /**
+   * Image field in *Service → Right Image 1 → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.rightImage1.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *Service → Right Image 1 → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.rightImage1.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Service → Right Image 1 → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.rightImage1.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button field in *Service → Right Image 1 → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.rightImage1.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Right Image 1 variation for Service Slice
+ *
+ * - **API ID**: `rightImage1`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceSliceRightImage1 = prismic.SharedSliceVariation<
+  "rightImage1",
+  Simplify<ServiceSliceRightImage1Primary>,
+  never
+>;
+
+/**
+ * Slice variation for *Service*
+ */
+type ServiceSliceVariation = ServiceSliceDefault | ServiceSliceRightImage1;
+
+/**
+ * Service Shared Slice
+ *
+ * - **API ID**: `service`
+ * - **Description**: Service
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceSlice = prismic.SharedSlice<
+  "service",
+  ServiceSliceVariation
+>;
+
+/**
  * Primary content in *Text → Default → Primary*
  */
 export interface TextSliceDefaultPrimary {
@@ -1311,6 +1499,13 @@ declare module "@prismicio/client" {
       QuoteSliceDefaultPrimary,
       QuoteSliceVariation,
       QuoteSliceDefault,
+      ServiceSlice,
+      ServiceSliceDefaultPrimaryItemsItem,
+      ServiceSliceDefaultPrimary,
+      ServiceSliceRightImage1Primary,
+      ServiceSliceVariation,
+      ServiceSliceDefault,
+      ServiceSliceRightImage1,
       TextSlice,
       TextSliceDefaultPrimary,
       TextSliceTwoColumnsPrimary,

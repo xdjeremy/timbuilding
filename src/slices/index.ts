@@ -12,6 +12,7 @@ export const components = {
   image_cards: dynamic(() => import("./ImageCards")),
   process_overview: dynamic(() => import("./ProcessOverview")),
   quote: dynamic(() => import("./Quote")),
+  service: dynamic(() => import("./Service")),
   text: dynamic(() => import("./Text")),
   text_with_image: dynamic(() => import("./TextWithImage")),
 };
