@@ -1,5 +1,5 @@
 import { PrismicRichText } from '@/components/PrismicRichText';
-import { components } from '../ServicesRichText';
+import { component } from '../ServicesRichText';
 import { FC } from 'react';
 import Badge from '@/components/common/Badge';
 import { MonitorSmartphone, Search, Settings } from 'lucide-react';
@@ -25,8 +25,8 @@ const ContentBlock: FC<ContentBlockProps> = ({
   return (
     <div className='order-1 md:order-2'>
       <Badge variant='amber'>{badge}</Badge>
-      <PrismicRichText field={title} components={components} />
-      <PrismicRichText field={description} components={components} />
+      <PrismicRichText field={title} components={component} />
+      <PrismicRichText field={description} components={component} />
       <div className='grid grid-cols-1 gap-4 py-2'>
         {items.map((item, index) => (
           <div key={index} className='flex self-start'>

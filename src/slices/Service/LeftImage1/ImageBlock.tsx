@@ -22,15 +22,12 @@ const ImageBlock: FC<ImageBlockProps> = ({ image }) => {
         }}
       />
       <OutlineSpark
-        name='OutlineSpark'
         className='w-[48px] h-[77px] absolute -top-16 left-64 lg:w-[64px] lg:h-[103px] lg:-top-20 lg:left-[350px]'
       />
       <BlueCircle
-        name='BlueCircle'
         className='w-[110px] h-[110px] absolute -left-8 -top-10 lg:w-[157px] lg:h-[157px] lg:-top-20 lg:-left-12'
       />
       <YellowCircle
-        name='YellowCircle'
         className='w-[94px] h-[94px] absolute end-px -right-9 -bottom-6 lg:w-[120px] lg:h-[120px] lg:-right-16 lg:-bottom-12'
       />
     </div>

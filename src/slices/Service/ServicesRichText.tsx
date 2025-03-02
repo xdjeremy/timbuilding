@@ -1,7 +1,7 @@
 import { Heading } from '@/components/Heading';
 import { JSXMapSerializer } from '@prismicio/react';
 
-export const components: JSXMapSerializer = {
+export const component: JSXMapSerializer = {
 	heading2: ({ children }) => (
 		<Heading
 			as='h2'

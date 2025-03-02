@@ -14,7 +14,6 @@ const ButtonGroup: FC<ButtonGroupProps> = ({ button }) => {
         <Button variant='outline'>{button.text}</Button>
       </PrismicNextLink>
       <OutlineSpark
-        name='OutlineSpark'
         className='w-[54px] h-[87px] -mt-10 lg:w-[76px] lg:h-[122px] lg:-mt-2'
       />
     </div>
