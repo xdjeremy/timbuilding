@@ -1,0 +1,93 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "FAQs",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Find answers to common questions about our services and pricing below.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"faqs": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"question",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "What is the cost?"
+								}
+							],
+							[
+								"answer",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "The ballpark price for a basic website typically ranges from 30,000 PHP to 50,000 PHP. This can vary based on features and complexity. For a more accurate quote, we recommend discussing your specific needs with us.",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"answer",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Website development timelines can vary. Generally, a simple website takes about 4 to 6 weeks. More complex projects may require additional time.",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"question",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "How long does it take?"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
