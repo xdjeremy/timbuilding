@@ -8,9 +8,9 @@ import { FC } from 'react';
 
 const component: JSXMapSerializer = {
 	heading2: ({ children }) => (
-		<Heading as='h2' size='md'>
+		<h2 className='mb-3 text-4xl font-extrabold leading-[1.2] md:mb-4 md:text-5xl lg:text-6xl'>
 			{children}
-		</Heading>
+		</h2>
 	),
 	strong: ({ children }) => (
 		<span className='text-brand-telemagenta'>{children}</span>

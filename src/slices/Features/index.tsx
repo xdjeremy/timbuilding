@@ -15,14 +15,14 @@ export type FeaturesProps = SliceComponentProps<Content.FeaturesSlice>;
 
 const components: JSXMapSerializer = {
 	heading2: ({ children }) => (
-		<Heading as='h2' size='lg'>
+		<h2 className='mb-5 text-5xl font-extrabold md:mb-6 md:text-7xl lg:text-8xl'>
 			{children}
-		</Heading>
+		</h2>
 	),
 	heading3: ({ children }) => (
-		<Heading as='h3' size='sm'>
+		<h3 className='mb-5 text-2xl font-bold md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl'>
 			{children}
-		</Heading>
+		</h3>
 	),
 	strong: ({ children }) => <span className='highlight'>{children}</span>,
 	paragraph: ({ children }) => <p className='md:text-md'>{children}</p>,
@@ -54,9 +54,21 @@ const Features: FC<FeaturesProps> = ({ slice }) => {
 							title={features[0]?.title}
 							description={features[0]?.description}
 							decorations={[
-								{ type: 'pink-star', position: '-left-5 -top-10', size: 'h-[75px] w-[75px] lg:-left-10 lg:-top-16 lg:h-[122px] lg:w-[122px]' },
-								{ type: 'blue-spark', position: '-top-3 left-16', size: 'h-[31px] w-[31px] lg:-top-5 lg:left-24 lg:h-[50px] lg:w-[50px]' },
-								{ type: 'blue-spark', position: '-left-5 top-12', size: 'h-[22px] w-[22px] lg:top-18 lg:h-[36px] lg:w-[36px]' }
+								{
+									type: 'pink-star',
+									position: '-left-5 -top-10',
+									size: 'h-[75px] w-[75px] lg:-left-10 lg:-top-16 lg:h-[122px] lg:w-[122px]',
+								},
+								{
+									type: 'blue-spark',
+									position: '-top-3 left-16',
+									size: 'h-[31px] w-[31px] lg:-top-5 lg:left-24 lg:h-[50px] lg:w-[50px]',
+								},
+								{
+									type: 'blue-spark',
+									position: '-left-5 top-12',
+									size: 'h-[22px] w-[22px] lg:top-18 lg:h-[36px] lg:w-[36px]',
+								},
 							]}
 						/>
 						<FeatureItem
@@ -69,9 +81,21 @@ const Features: FC<FeaturesProps> = ({ slice }) => {
 							title={features[2]?.title}
 							description={features[2]?.description}
 							decorations={[
-								{ type: 'yellow-star', position: '-bottom-6 -right-2', size: 'h-[64px] w-[64px] lg:-bottom-8 lg:-right-12 lg:h-[121px] lg:w-[121px]' },
-								{ type: 'black-spark', position: '-bottom-6 right-16', size: 'h-[26px] w-[26px] lg:-bottom-8 lg:right-20 lg:h-[50px] lg:w-[50px]' },
-								{ type: 'black-spark', position: 'bottom-12 -right-4', size: 'h-[26px] w-[26px] lg:bottom-24 lg:-right-4 lg:h-[33px] lg:w-[33px]' }
+								{
+									type: 'yellow-star',
+									position: '-bottom-6 -right-2',
+									size: 'h-[64px] w-[64px] lg:-bottom-8 lg:-right-12 lg:h-[121px] lg:w-[121px]',
+								},
+								{
+									type: 'black-spark',
+									position: '-bottom-6 right-16',
+									size: 'h-[26px] w-[26px] lg:-bottom-8 lg:right-20 lg:h-[50px] lg:w-[50px]',
+								},
+								{
+									type: 'black-spark',
+									position: 'bottom-12 -right-4',
+									size: 'h-[26px] w-[26px] lg:bottom-24 lg:-right-4 lg:h-[33px] lg:w-[33px]',
+								},
 							]}
 						/>
 					</div>

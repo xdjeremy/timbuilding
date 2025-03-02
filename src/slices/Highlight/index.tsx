@@ -13,14 +13,14 @@ export type HighlightProps = SliceComponentProps<Content.HighlightSlice>;
 
 const component: JSXMapSerializer = {
 	heading2: ({ children }) => (
-		<Heading as='h2' size='md'>
+		<h2 className='mb-5 text-4xl font-extrabold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl'>
 			{children}
-		</Heading>
+		</h2>
 	), // for the highlight items' titles
 	heading3: ({ children }) => (
-		<Heading as='h3' size='md'>
+		<h3 className='mb-2 text-5xl font-bold md:text-7xl lg:text-8xl'>
 			{children}
-		</Heading>
+		</h3>
 	), // for main title
 	paragraph: ({ children }) => (
 		<p className='mb-6 md:mb-8 md:text-md'>{children}</p>
@@ -38,7 +38,6 @@ const Highlight: FC<HighlightProps> = ({ slice }) => {
 
 	return (
 		<section
-			id='relume'
 			className='relative font-redhat text-brand-dark-blue border-b-4 border-black px-[5%] py-16 md:py-24 lg:py-28'>
 			<div className='container'>
 				<div className='grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-x-20'>

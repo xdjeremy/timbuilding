@@ -26,7 +26,7 @@
             "label": "Title",
             "placeholder": "Use bold for highlighting",
             "allowTargetBlank": true,
-            "multi": "heading3,strong"
+            "multi": "strong,heading2"
           }
         },
         "description": {
@@ -50,7 +50,7 @@
                   "label": "Title",
                   "placeholder": "Use bold for highlighting",
                   "allowTargetBlank": true,
-                  "single": "heading2,strong"
+                  "single": "strong,heading3"
                 }
               },
               "description": {

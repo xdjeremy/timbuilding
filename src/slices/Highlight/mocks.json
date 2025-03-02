@@ -30,9 +30,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading3",
+						"type": "heading2",
 						"content": {
-							"text": "Whether"
+							"text": "First"
 						}
 					}
 				]
@@ -60,9 +60,9 @@
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
-											"type": "heading2",
+											"type": "heading3",
 											"content": {
-												"text": "Speed"
+												"text": "Proper"
 											}
 										}
 									]
@@ -93,18 +93,10 @@
 									"__TYPE__": "StructuredTextContent",
 									"value": [
 										{
-											"type": "heading2",
+											"type": "heading3",
 											"content": {
-												"text": "Efficiency",
-												"spans": [
-													{
-														"type": "strong",
-														"start": 0,
-														"end": 10
-													}
-												]
-											},
-											"direction": "ltr"
+												"text": "Element"
+											}
 										}
 									]
 								}

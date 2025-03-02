@@ -4,24 +4,25 @@
 @config '../../tailwind.config.mjs';
 
 @theme {
-    --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-sans:
+		var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+		BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+		'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol', 'Noto Color Emoji';
 
-    --font-redhat: 'Red Hat Display', var(--font-sans);
+	--font-redhat: 'Red Hat Display', var(--font-sans);
 
-    --color-brand-amber: #FBBF24;
-    --color-brand-dark-blue: #1E293B;
-    --color-brand-blue: #0891B2;
-    --color-brand-telemagenta: #DB2777;
-    --color-background-secondary: #CCCCCC;
+	--color-brand-amber: #fbbf24;
+	--color-brand-dark-blue: #1e293b;
+	--color-brand-blue: #0891b2;
+	--color-brand-telemagenta: #db2777;
+	--color-background-secondary: #cccccc;
 }
 
 @utility neobrutalist-shadow {
-    box-shadow: -10px 10px 0px 0px #000; /* Shadow to the left */
-    border: 4px solid #000; /* Increased border size */
-    border-radius: 1.5rem; /* rounded-3xl equivalent */
+	box-shadow: -10px 10px 0px 0px #000; /* Shadow to the left */
+	border: 4px solid #000; /* Increased border size */
+	border-radius: 1.5rem; /* rounded-3xl equivalent */
 }
 
 @utility neobrutalist-shadow-left {
@@ -32,25 +33,32 @@
 }
 
 @utility highlight {
-    position: relative;
-    &::after {
-        content: '';
-        background-color: #fbbf24;
-        height: 25px;
-        display: block;
-        position: absolute;
-        width: 110%;
-        left: -5%;
-        bottom: -5%;
-        z-index: -1;
-    }
+	position: relative;
+	&::after {
+		content: '';
+		background-color: #fbbf24;
+		height: 25px;
+		display: block;
+		position: absolute;
+		width: 110%;
+		left: -5%;
+		bottom: -5%;
+		z-index: -1;
+	}
 
-    @media (min-width: 1024px) {
-        &::after {
-            height: 30px;
-            width: 110%;
-            left: -5%;
-            bottom: -5%;
-        }
-    }
+	@media (min-width: 1024px) {
+		&::after {
+			height: 30px;
+			width: 110%;
+			left: -5%;
+			bottom: -5%;
+		}
+	}
+}
+
+html,
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
 }
