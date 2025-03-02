@@ -1,0 +1,46 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"page_header": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Everywhere"
+						}
+					}
+				]
+			},
+			"page_sub_header": {
+				"__TYPE__": "FieldContent",
+				"value": "feed",
+				"type": "Text"
+			},
+			"header_button": {
+				"key": "d85aba52-ad36-4d56-a215-7bf8212741f8",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev",
+					"text": "parts",
+					"variant": "Primary"
+				}
+			},
+			"page_header_background": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Occaecat nisi eiusmod sunt id in incididunt sit pariatur ex minim nulla pariatur."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

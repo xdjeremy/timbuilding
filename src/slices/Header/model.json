@@ -1,0 +1,59 @@
+{
+  "id": "header",
+  "type": "SharedSlice",
+  "name": "Header",
+  "description": "Header",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "page_header": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Page Header",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "page_sub_header": {
+          "type": "Text",
+          "config": {
+            "label": "Page Sub header",
+            "placeholder": ""
+          }
+        },
+        "header_button": {
+          "type": "Link",
+          "config": {
+            "label": "Header Button",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false,
+            "variants": [
+              "Primary",
+              "Secondary"
+            ]
+          }
+        },
+        "page_header_background": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Page Header Background",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2,rtl"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

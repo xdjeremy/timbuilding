@@ -445,6 +445,84 @@ export type FeaturesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Header → Default → Primary*
+ */
+export interface HeaderSliceDefaultPrimary {
+  /**
+   * Page Header field in *Header → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.default.primary.page_header
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  page_header: prismic.RichTextField;
+
+  /**
+   * Page Sub header field in *Header → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.default.primary.page_sub_header
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  page_sub_header: prismic.KeyTextField;
+
+  /**
+   * Header Button field in *Header → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.default.primary.header_button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  header_button: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    "Primary" | "Secondary"
+  >;
+
+  /**
+   * Page Header Background field in *Header → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.default.primary.page_header_background
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  page_header_background: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Header Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeaderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeaderSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Header*
+ */
+type HeaderSliceVariation = HeaderSliceDefault;
+
+/**
+ * Header Shared Slice
+ *
+ * - **API ID**: `header`
+ * - **Description**: Header
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeaderSlice = prismic.SharedSlice<"header", HeaderSliceVariation>;
+
+/**
  * Item in *Hero → Default → Primary → Images*
  */
 export interface HeroSliceDefaultPrimaryImagesItem {
@@ -1199,6 +1277,10 @@ declare module "@prismicio/client" {
       FeaturesSliceDefaultPrimary,
       FeaturesSliceVariation,
       FeaturesSliceDefault,
+      HeaderSlice,
+      HeaderSliceDefaultPrimary,
+      HeaderSliceVariation,
+      HeaderSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimaryImagesItem,
       HeroSliceDefaultPrimary,
