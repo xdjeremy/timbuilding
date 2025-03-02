@@ -1,3 +1,4 @@
+import { Bounded } from '@/components/Bounded';
 import { Heading } from '@/components/Heading';
 import { PrismicRichText } from '@/components/PrismicRichText';
 import Button from '@/components/common/Button';
@@ -31,7 +32,7 @@ const CallToAction: FC<CallToActionProps> = ({ slice }) => {
 		slice.primary;
 
 	return (
-		<section className='px-[5%] py-16 md:py-24 lg:py-28 relative font-redhat text-brand-dark-blue border-b-4 border-black h-fit overflow-y-hidden overflow-x-hidden'>
+		<Bounded as='section' className='px-[5%] py-16 md:py-24 lg:py-28 relative font-redhat text-brand-dark-blue border-b-4 border-black h-fit overflow-y-hidden overflow-x-hidden'>
 			<div className='container grid w-full grid-cols-1 items-start justify-between gap-6'>
 				<div className='md:mr-12 lg:mr-0'>
 					<div className='w-full max-w-lg'>
@@ -53,7 +54,7 @@ const CallToAction: FC<CallToActionProps> = ({ slice }) => {
 				className='absolute -bottom-5 left-0 w-full -z-10 hidden lg:block'
 				field={background}
 			/>
-		</section>
+		</Bounded>
 	);
 };
 

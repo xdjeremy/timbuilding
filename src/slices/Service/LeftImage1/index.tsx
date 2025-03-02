@@ -4,6 +4,7 @@ import { OutlineSpark, PinkCircle } from '@/constants/icons';
 import ImageBlock from './ImageBlock';
 import ContentBlock from './ContentBlock';
 import ButtonGroup from './ButtonGroup';
+import { Bounded } from '@/components/Bounded';
 
 const LeftImage1: FC<ServiceProps> = ({ slice }) => {
   const { badge, image, title, description, button } = slice.primary;
@@ -11,11 +12,11 @@ const LeftImage1: FC<ServiceProps> = ({ slice }) => {
   if (slice.variation !== 'default') return null 
 
   return (
-    <section
+    <Bounded
+      as='section'
       data-slice-variation={slice.variation}
       className='px-[5%] font-redhat text-brand-dark-blue py-16 md:py-24 lg:py-28 border-b-4 border-black'
     >
-      <div className='container'>
         <div className='grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-x-20 relative'>
           <ImageBlock image={image} />
           <div className='order-1 md:order-2'>
@@ -36,8 +37,7 @@ const LeftImage1: FC<ServiceProps> = ({ slice }) => {
             className='w-[34px] h-[55px] absolute -top-2 end-px -right-2 md:w-[51px] md:-right-4 md:top-4'
           />
         </div>
-      </div>
-    </section>
+    </Bounded>
   );
 };
 
