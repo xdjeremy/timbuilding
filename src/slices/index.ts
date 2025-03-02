@@ -10,6 +10,7 @@ export const components = {
   highlight: dynamic(() => import("./Highlight")),
   image: dynamic(() => import("./Image")),
   image_cards: dynamic(() => import("./ImageCards")),
+  portfolio: dynamic(() => import("./Portfolio")),
   process: dynamic(() => import("./Process")),
   process_overview: dynamic(() => import("./ProcessOverview")),
   quote: dynamic(() => import("./Quote")),

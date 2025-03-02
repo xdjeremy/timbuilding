@@ -904,6 +904,118 @@ export type ImageCardsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Portfolio → Default → Primary → Project*
+ */
+export interface PortfolioSliceDefaultPrimaryProjectItem {
+  /**
+   * Image field in *Portfolio → Default → Primary → Project*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.default.primary.project[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Text field in *Portfolio → Default → Primary → Project*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.default.primary.project[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Shadow Color field in *Portfolio → Default → Primary → Project*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.default.primary.project[].shadow_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  shadow_color: prismic.ColorField;
+}
+
+/**
+ * Primary content in *Portfolio → Default → Primary*
+ */
+export interface PortfolioSliceDefaultPrimary {
+  /**
+   * Badge field in *Portfolio → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.default.primary.badge
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  badge: prismic.KeyTextField;
+
+  /**
+   * Title field in *Portfolio → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Portfolio → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Project field in *Portfolio → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.default.primary.project[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  project: prismic.GroupField<
+    Simplify<PortfolioSliceDefaultPrimaryProjectItem>
+  >;
+}
+
+/**
+ * Default variation for Portfolio Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PortfolioSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PortfolioSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Portfolio*
+ */
+type PortfolioSliceVariation = PortfolioSliceDefault;
+
+/**
+ * Portfolio Shared Slice
+ *
+ * - **API ID**: `portfolio`
+ * - **Description**: Portfolio
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PortfolioSlice = prismic.SharedSlice<
+  "portfolio",
+  PortfolioSliceVariation
+>;
+
+/**
  * Item in *Process → Default → Primary → Steps*
  */
 export interface ProcessSliceDefaultPrimaryStepsItem {
@@ -1683,6 +1795,11 @@ declare module "@prismicio/client" {
       ImageCardsSliceDefaultPrimary,
       ImageCardsSliceVariation,
       ImageCardsSliceDefault,
+      PortfolioSlice,
+      PortfolioSliceDefaultPrimaryProjectItem,
+      PortfolioSliceDefaultPrimary,
+      PortfolioSliceVariation,
+      PortfolioSliceDefault,
       ProcessSlice,
       ProcessSliceDefaultPrimaryStepsItem,
       ProcessSliceDefaultPrimary,
