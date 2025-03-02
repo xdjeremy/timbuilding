@@ -35,6 +35,18 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "portfolio": {
+              "type": "SharedSlice"
+            },
+            "process": {
+              "type": "SharedSlice"
+            },
+            "service": {
+              "type": "SharedSlice"
+            },
+            "header": {
+              "type": "SharedSlice"
+            },
             "process_overview": {
               "type": "SharedSlice"
             },

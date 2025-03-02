@@ -62,6 +62,10 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | PortfolioSlice
+  | ProcessSlice
+  | ServiceSlice
+  | HeaderSlice
   | ProcessOverviewSlice
   | CallToActionSlice
   | HighlightSlice
