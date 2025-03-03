@@ -474,6 +474,31 @@ export interface FrequentlyAskedQuestionsSliceDefaultPrimaryFaqsItem {
 }
 
 /**
+ * Item in *FrequentlyAskedQuestions → Centered → Primary → FAQs*
+ */
+export interface FrequentlyAskedQuestionsSliceCenteredPrimaryFaqsItem {
+  /**
+   * Question field in *FrequentlyAskedQuestions → Centered → Primary → FAQs*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.centered.primary.faqs[].question
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  question: prismic.KeyTextField;
+
+  /**
+   * Answer field in *FrequentlyAskedQuestions → Centered → Primary → FAQs*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.centered.primary.faqs[].answer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  answer: prismic.RichTextField;
+}
+
+/**
  * Primary content in *FrequentlyAskedQuestions → Default → Primary*
  */
 export interface FrequentlyAskedQuestionsSliceDefaultPrimary {
@@ -514,10 +539,72 @@ export type FrequentlyAskedQuestionsSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *FrequentlyAskedQuestions → Centered → Primary*
+ */
+export interface FrequentlyAskedQuestionsSliceCenteredPrimary {
+  /**
+   * Text field in *FrequentlyAskedQuestions → Centered → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.centered.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * FAQs field in *FrequentlyAskedQuestions → Centered → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.centered.primary.faqs[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  faqs: prismic.GroupField<
+    Simplify<FrequentlyAskedQuestionsSliceCenteredPrimaryFaqsItem>
+  >;
+
+  /**
+   * Bottom Text field in *FrequentlyAskedQuestions → Centered → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.centered.primary.bottom_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  bottom_text: prismic.RichTextField;
+
+  /**
+   * Button field in *FrequentlyAskedQuestions → Centered → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.centered.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Centered variation for FrequentlyAskedQuestions Slice
+ *
+ * - **API ID**: `centered`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FrequentlyAskedQuestionsSliceCentered =
+  prismic.SharedSliceVariation<
+    "centered",
+    Simplify<FrequentlyAskedQuestionsSliceCenteredPrimary>,
+    never
+  >;
+
+/**
  * Slice variation for *FrequentlyAskedQuestions*
  */
 type FrequentlyAskedQuestionsSliceVariation =
-  FrequentlyAskedQuestionsSliceDefault;
+  | FrequentlyAskedQuestionsSliceDefault
+  | FrequentlyAskedQuestionsSliceCentered;
 
 /**
  * FrequentlyAskedQuestions Shared Slice
@@ -2097,8 +2184,11 @@ declare module "@prismicio/client" {
       FrequentlyAskedQuestionsSlice,
       FrequentlyAskedQuestionsSliceDefaultPrimaryFaqsItem,
       FrequentlyAskedQuestionsSliceDefaultPrimary,
+      FrequentlyAskedQuestionsSliceCenteredPrimaryFaqsItem,
+      FrequentlyAskedQuestionsSliceCenteredPrimary,
       FrequentlyAskedQuestionsSliceVariation,
       FrequentlyAskedQuestionsSliceDefault,
+      FrequentlyAskedQuestionsSliceCentered,
       HeaderSlice,
       HeaderSliceDefaultPrimary,
       HeaderSlicePageHeaderNoButtonsPrimary,

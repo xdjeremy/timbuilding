@@ -89,5 +89,80 @@
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "centered",
+		"primary": {
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nostrud sit commodo aliquip ullamco qui dolor ad aliqua. Mollit dolor sint ullamco ullamco culpa voluptate ex ea pariatur. Sint quis adipisicing consectetur ullamco eiusmod duis eu ad."
+						}
+					}
+				]
+			},
+			"faqs": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"question",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "finally",
+									"type": "Text"
+								}
+							],
+							[
+								"answer",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Qui non anim ad anim esse incididunt aute. Consectetur consectetur velit eiusmod nisi officia pariatur officia in anim consequat ea mollit ipsum incididunt veniam. Consequat proident veniam minim laborum ut officia ex."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"bottom_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Excepteur elit id exercitation incididunt nostrud pariatur excepteur commodo ex aute laboris do. Cillum voluptate officia commodo laborum nulla laborum nulla aliqua. Lorem ex esse ut exercitation consectetur adipisicing ut anim sit et aute ullamco ipsum non."
+						}
+					}
+				]
+			},
+			"button": {
+				"__TYPE__": "LinkContent",
+				"key": "842ea6b7-cc81-4ab8-89ea-1bf495259186",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "quiet"
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

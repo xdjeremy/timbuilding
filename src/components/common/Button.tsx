@@ -4,6 +4,7 @@ import { cn } from '../../utils/tailwind';
 type ButtonProps = {
 	variant?: keyof typeof variants;
 	children: React.ReactNode;
+	className?: string;
 };
 
 const variants = {
@@ -15,12 +16,17 @@ const variants = {
 		'bg-transparent border-4 border-brand-dark-blue text-black bg-white rounded-md transition-all ease-in-out hover:translate-x-1 hover:-translate-y-1 hover:shadow-[-5px_5px_0px_0px_rgba(0,0,0,1)]',
 };
 
-const Button: FC<ButtonProps> = ({ variant = 'primary', children }) => {
+const Button: FC<ButtonProps> = ({
+	variant = 'primary',
+	children,
+	className,
+}) => {
 	return (
 		<button
 			className={cn(
 				'h-12 px-6 py-3 justify-center items-center gap-2 inline-flex cursor-pointer',
-				variants[variant]
+				variants[variant],
+				className
 			)}>
 			<div className='text-base font-normal leading-normal'>{children}</div>
 		</button>
