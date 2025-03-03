@@ -1427,6 +1427,147 @@ export type PortfolioSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Pricing → Default → Primary → Features*
+ */
+export interface PricingSliceDefaultPrimaryFeaturesItem {
+  /**
+   * Icon field in *Pricing → Default → Primary → Features*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.features[].icon
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon: prismic.SelectField<
+    "alignStartVertical" | "monitor" | "messagesSquare"
+  >;
+
+  /**
+   * Text field in *Pricing → Default → Primary → Features*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.features[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Item in *Pricing → Default → Primary → Inclusions*
+ */
+export interface PricingSliceDefaultPrimaryInclusionsItem {
+  /**
+   * Text field in *Pricing → Default → Primary → Inclusions*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.inclusions[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Pricing → Default → Primary*
+ */
+export interface PricingSliceDefaultPrimary {
+  /**
+   * Title field in *Pricing → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Features field in *Pricing → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.features[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  features: prismic.GroupField<
+    Simplify<PricingSliceDefaultPrimaryFeaturesItem>
+  >;
+
+  /**
+   * Price Text field in *Pricing → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.price_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  price_text: prismic.RichTextField;
+
+  /**
+   * Price field in *Pricing → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.price
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  price: prismic.RichTextField;
+
+  /**
+   * Inclusions field in *Pricing → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.inclusions[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  inclusions: prismic.GroupField<
+    Simplify<PricingSliceDefaultPrimaryInclusionsItem>
+  >;
+
+  /**
+   * Button field in *Pricing → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.default.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Default variation for Pricing Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PricingSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PricingSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Pricing*
+ */
+type PricingSliceVariation = PricingSliceDefault;
+
+/**
+ * Pricing Shared Slice
+ *
+ * - **API ID**: `pricing`
+ * - **Description**: Pricing
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PricingSlice = prismic.SharedSlice<
+  "pricing",
+  PricingSliceVariation
+>;
+
+/**
  * Item in *Process → Default → Primary → Steps*
  */
 export interface ProcessSliceDefaultPrimaryStepsItem {
@@ -2226,6 +2367,12 @@ declare module "@prismicio/client" {
       PortfolioSliceDefaultPrimary,
       PortfolioSliceVariation,
       PortfolioSliceDefault,
+      PricingSlice,
+      PricingSliceDefaultPrimaryFeaturesItem,
+      PricingSliceDefaultPrimaryInclusionsItem,
+      PricingSliceDefaultPrimary,
+      PricingSliceVariation,
+      PricingSliceDefault,
       ProcessSlice,
       ProcessSliceDefaultPrimaryStepsItem,
       ProcessSliceDefaultPrimary,

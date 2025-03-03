@@ -14,6 +14,7 @@ export const components = {
   image: dynamic(() => import("./Image")),
   image_cards: dynamic(() => import("./ImageCards")),
   portfolio: dynamic(() => import("./Portfolio")),
+  pricing: dynamic(() => import("./Pricing")),
   process: dynamic(() => import("./Process")),
   process_overview: dynamic(() => import("./ProcessOverview")),
   quote: dynamic(() => import("./Quote")),

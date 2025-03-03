@@ -1,0 +1,105 @@
+{
+  "id": "pricing",
+  "type": "SharedSlice",
+  "name": "Pricing",
+  "description": "Pricing",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2,paragraph"
+          }
+        },
+        "features": {
+          "type": "Group",
+          "config": {
+            "label": "Features",
+            "repeat": true,
+            "fields": {
+              "icon": {
+                "type": "Select",
+                "config": {
+                  "label": "Icon",
+                  "placeholder": "",
+                  "options": [
+                    "alignStartVertical",
+                    "monitor",
+                    "messagesSquare"
+                  ]
+                }
+              },
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Text",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,heading3"
+                }
+              }
+            }
+          }
+        },
+        "price_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Price Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading4,paragraph"
+          }
+        },
+        "price": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Price",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading5,strong"
+          }
+        },
+        "inclusions": {
+          "type": "Group",
+          "config": {
+            "label": "Inclusions",
+            "repeat": true,
+            "fields": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Text",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph"
+                }
+              }
+            }
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "Button",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
