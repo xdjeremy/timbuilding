@@ -8,21 +8,39 @@ import { PrismicRichText } from '@/components/PrismicRichText';
 import { createClient } from '@/prismicio';
 import { notFound } from 'next/navigation';
 import FeaturedBlog from './FeaturedBlog';
+import { asText } from '@prismicio/client';
+import { Metadata } from 'next';
 
 const component: JSXMapSerializer = {
-  heading1: ({ children }) => <h1 className='mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl'>{children}</h1>,
-  paragraph: ({children}) => <p className='md:text-md'>{children}</p>
+	heading1: ({ children }) => (
+		<h1 className='mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl'>
+			{children}
+		</h1>
+	),
+	paragraph: ({ children }) => <p className='md:text-md'>{children}</p>,
+};
+
+export async function generateMetadata(): Promise<Metadata> {
+	const client = createClient();
+	const page = await client.getSingle('blog_list').catch(() => notFound());
+
+	return {
+		title: asText(page.data.title),
+		description: page.data.meta_description,
+		openGraph: {
+			title: page.data.meta_title ?? undefined,
+			images: [{ url: page.data.meta_image.url ?? '' }],
+		},
+	};
 }
 
-//TODO: add seo
 const BlogHome = async () => {
-  const client = createClient();
-  // TODO: remove uid
-  const page = await client.getByUID('blog_list', 'blog_list').catch(() => notFound());
+	const client = createClient();
+	const page = await client.getSingle('blog_list').catch(() => notFound());
 
-  const { badge, title } = page.data;
-  return (
-    <Bounded className='px-[5%] py-16 md:py-24 lg:py-28'>
+	const { badge, title } = page.data;
+	return (
+		<Bounded className='px-[5%] py-16 md:py-24 lg:py-28'>
 			<div className='mb-12 md:mb-18 lg:mb-20'>
 				<div className='w-full max-w-lg space-y-3 md:space-y-4'>
 					<Badge variant='pink'>{badge}</Badge>
@@ -31,7 +49,7 @@ const BlogHome = async () => {
 			</div>
 			<div className='flex flex-col justify-start'>
 				<FeaturedBlog />
-        {/* <Tabs defaultValue={tabs[0].value} className="flex flex-col justify-center">
+				{/* <Tabs defaultValue={tabs[0].value} className="flex flex-col justify-center">
             <TabsList className="no-scrollbar mb-12 flex w-full items-center justify-start overflow-auto md:mb-16 md:ml-0 md:w-full md:overflow-hidden md:pl-0">
               {tabs.map((tab, index) => (
                 <TabsTrigger
@@ -96,7 +114,7 @@ const BlogHome = async () => {
           </Tabs> */}
 			</div>
 		</Bounded>
-  );
+	);
 };
 
 export default BlogHome;

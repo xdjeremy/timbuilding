@@ -4,12 +4,9 @@ import { PrismicRichText } from '@/components/PrismicRichText';
 import { createClient } from '@/prismicio';
 import { asText, Content } from '@prismicio/client';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
-import { JSXMapSerializer, SliceComponentProps } from '@prismicio/react';
-import { ButtonProps } from '@relume_io/relume-ui';
+import { JSXMapSerializer } from '@prismicio/react';
 import { format } from 'date-fns';
-import { ChevronLeft, ChevronLeftIcon, Link } from 'lucide-react';
-import { BlogDocument } from 'prismicio-types';
-import { FC } from 'react';
+import { ChevronLeftIcon } from 'lucide-react';
 import readingTime from 'reading-time';
 
 const component: JSXMapSerializer = {

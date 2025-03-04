@@ -134,6 +134,17 @@ interface BlogAuthorDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   author: prismic.KeyTextField;
+
+  /**
+   * Avatar field in *Blog Author*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_author.avatar
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  avatar: prismic.ImageField<never>;
 }
 
 /**
@@ -276,7 +287,7 @@ interface BlogListDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type BlogListDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
+  prismic.PrismicDocumentWithoutUID<
     Simplify<BlogListDocumentData>,
     "blog_list",
     Lang

@@ -18,6 +18,14 @@
           "label": "Author",
           "placeholder": ""
         }
+      },
+      "avatar": {
+        "type": "Image",
+        "config": {
+          "label": "Avatar",
+          "constraint": {},
+          "thumbnails": []
+        }
       }
     }
   }
