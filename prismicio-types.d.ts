@@ -307,9 +307,95 @@ export type CallToActionSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *CallToAction → CTA - Two Buttons → Primary*
+ */
+export interface CallToActionSliceCtaTwoButtonsPrimary {
+  /**
+   * Title field in *CallToAction → CTA - Two Buttons → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Use bold for highlighting
+   * - **API ID Path**: call_to_action.ctaTwoButtons.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *CallToAction → CTA - Two Buttons → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.ctaTwoButtons.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button field in *CallToAction → CTA - Two Buttons → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.ctaTwoButtons.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * Background field in *CallToAction → CTA - Two Buttons → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.ctaTwoButtons.primary.background
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background: prismic.ImageField<never>;
+
+  /**
+   * Background Mobile field in *CallToAction → CTA - Two Buttons → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.ctaTwoButtons.primary.background_mobile
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_mobile: prismic.ImageField<never>;
+
+  /**
+   * Outline Button field in *CallToAction → CTA - Two Buttons → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.ctaTwoButtons.primary.outline_button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  outline_button: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * CTA - Two Buttons variation for CallToAction Slice
+ *
+ * - **API ID**: `ctaTwoButtons`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSliceCtaTwoButtons = prismic.SharedSliceVariation<
+  "ctaTwoButtons",
+  Simplify<CallToActionSliceCtaTwoButtonsPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *CallToAction*
  */
-type CallToActionSliceVariation = CallToActionSliceDefault;
+type CallToActionSliceVariation =
+  | CallToActionSliceDefault
+  | CallToActionSliceCtaTwoButtons;
 
 /**
  * CallToAction Shared Slice
@@ -2347,8 +2433,10 @@ declare module "@prismicio/client" {
       AllDocumentTypes,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,
+      CallToActionSliceCtaTwoButtonsPrimary,
       CallToActionSliceVariation,
       CallToActionSliceDefault,
+      CallToActionSliceCtaTwoButtons,
       ContactFormSlice,
       ContactFormSliceDefaultPrimary,
       ContactFormSliceVariation,
