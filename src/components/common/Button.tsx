@@ -5,6 +5,7 @@ type ButtonProps = {
 	variant?: keyof typeof variants;
 	children: React.ReactNode;
 	className?: string;
+	type?: 'button' | 'submit' | 'reset';
 };
 
 const variants = {
@@ -20,6 +21,7 @@ const Button: FC<ButtonProps> = ({
 	variant = 'primary',
 	children,
 	className,
+	type = 'button',
 }) => {
 	return (
 		<button
@@ -27,7 +29,8 @@ const Button: FC<ButtonProps> = ({
 				'h-12 px-6 py-3 justify-center items-center gap-2 inline-flex cursor-pointer',
 				variants[variant],
 				className
-			)}>
+			)}
+			type={type}>
 			<div className='text-base font-normal leading-normal'>{children}</div>
 		</button>
 	);

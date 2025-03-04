@@ -1,0 +1,58 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"badge": {
+				"__TYPE__": "FieldContent",
+				"value": "week",
+				"type": "Text"
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Duis mollit deserunt enim dolore aliquip officia in. Eiusmod esse in Lorem et. Occaecat do enim ut."
+						}
+					}
+				]
+			},
+			"button": {
+				"key": "9caf5155-ebdb-4f37-8ee1-541539d38a5c",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev",
+					"text": "dangerous"
+				}
+			},
+			"terms_conditions": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "I accept the Terms.",
+							"spans": [
+								{
+									"type": "hyperlink",
+									"start": 13,
+									"end": 18,
+									"data": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://timbuilding.lol/contact/#",
+										"target": "_blank"
+									}
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
