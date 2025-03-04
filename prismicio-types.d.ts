@@ -760,16 +760,6 @@ export interface HeaderSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   page_header_background: prismic.RichTextField;
-
-  /**
-   * Header Button Text field in *Header → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: header.default.primary.header_button_text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  header_button_text: prismic.KeyTextField;
 }
 
 /**
@@ -858,22 +848,6 @@ export interface HeaderSlicePageHeaderNoBgPrimary {
   page_sub_header: prismic.KeyTextField;
 
   /**
-   * Header Button field in *Header → PageHeaderNoBG → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: header.pageHeaderNoBg.primary.header_button
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  header_button: prismic.LinkField<
-    string,
-    string,
-    unknown,
-    prismic.FieldState,
-    "Primary" | "Secondary"
-  >;
-
-  /**
    * Page Header Background field in *Header → PageHeaderNoBG → Primary*
    *
    * - **Field Type**: Rich Text
@@ -882,16 +856,6 @@ export interface HeaderSlicePageHeaderNoBgPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   page_header_background: prismic.RichTextField;
-
-  /**
-   * Header Button Text field in *Header → PageHeaderNoBG → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: header.pageHeaderNoBg.primary.header_button_text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  header_button_text: prismic.KeyTextField;
 
   /**
    * Badge Group field in *Header → PageHeaderNoBG → Primary*
@@ -968,16 +932,6 @@ export interface HeaderSlicePageHeaderTwoShadowsPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   page_header_background: prismic.RichTextField;
-
-  /**
-   * Header Button Text field in *Header → Page Header-Two Shadows → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: header.pageHeaderTwoShadows.primary.header_button_text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  header_button_text: prismic.KeyTextField;
 }
 
 /**

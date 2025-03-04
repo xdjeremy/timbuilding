@@ -35,7 +35,7 @@ const PageHeaderTwoShadows: FC<HeaderProps> = ({slice}) => {
                             field={slice.primary.header_button}
                             className={slice.primary.header_button.variant}
                         >
-                            <Button><span className="text-nowrap">{slice.primary.header_button_text}</span></Button>
+                            <Button><span className="text-nowrap">{slice.primary.header_button.text}</span></Button>
                         </PrismicNextLink>
                     </div>
                 </div>

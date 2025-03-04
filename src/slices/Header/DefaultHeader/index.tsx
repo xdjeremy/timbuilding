@@ -32,7 +32,7 @@ const DefaultHeader: FC<HeaderProps> = ({slice}) => {
                         <PrismicNextLink
                             field={slice.primary.header_button}
                             className={slice.primary.header_button.variant}
-                        ><Button>{slice.primary.header_button_text}</Button></PrismicNextLink>
+                        ><Button>{slice.primary.header_button.text}</Button></PrismicNextLink>
                     </div>
                 </div>
             </div>

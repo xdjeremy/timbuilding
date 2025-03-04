@@ -51,13 +51,6 @@
             "allowTargetBlank": true,
             "multi": "paragraph,heading2,rtl"
           }
-        },
-        "header_button_text": {
-          "type": "Text",
-          "config": {
-            "label": "Header Button Text",
-            "placeholder": ""
-          }
         }
       },
       "items": {}
@@ -122,21 +115,6 @@
             "placeholder": ""
           }
         },
-        "header_button": {
-          "type": "Link",
-          "config": {
-            "label": "Header Button",
-            "placeholder": "",
-            "select": null,
-            "allowTargetBlank": true,
-            "allowText": true,
-            "repeat": false,
-            "variants": [
-              "Primary",
-              "Secondary"
-            ]
-          }
-        },
         "page_header_background": {
           "type": "StructuredText",
           "config": {
@@ -144,13 +122,6 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,heading2,rtl,heading4"
-          }
-        },
-        "header_button_text": {
-          "type": "Text",
-          "config": {
-            "label": "Header Button Text",
-            "placeholder": ""
           }
         },
         "badge_group": {
@@ -218,13 +189,6 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,heading2"
-          }
-        },
-        "header_button_text": {
-          "type": "Text",
-          "config": {
-            "label": "Header Button Text",
-            "placeholder": ""
           }
         }
       },
