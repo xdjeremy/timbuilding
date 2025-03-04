@@ -14,7 +14,7 @@ const variants = {
 	secondary:
 		'bg-brand-blue shadow-[-5px_5px_0px_0px_rgba(0,0,0,1)] border-4 border-black text-white',
 	outline:
-		'bg-transparent border-4 border-brand-dark-blue text-black bg-white rounded-md transition-all ease-in-out hover:translate-x-1 hover:-translate-y-1 hover:shadow-[-5px_5px_0px_0px_rgba(0,0,0,1)]',
+		'border-4 border-brand-dark-blue text-black bg-white rounded-md transition-all ease-in-out hover:translate-x-1 hover:-translate-y-1 hover:shadow-[-5px_5px_0px_0px_rgba(0,0,0,1)]',
 };
 
 const Button: FC<ButtonProps> = ({
