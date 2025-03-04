@@ -1,12 +1,14 @@
 import { Bounded } from '@/components/Bounded';
 import Badge from '@/components/common/Badge';
 import { PrismicRichText } from '@/components/PrismicRichText';
+import { createClient } from '@/prismicio';
 import { asText, Content } from '@prismicio/client';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 import { JSXMapSerializer, SliceComponentProps } from '@prismicio/react';
 import { ButtonProps } from '@relume_io/relume-ui';
 import { format } from 'date-fns';
 import { ChevronLeft, ChevronLeftIcon, Link } from 'lucide-react';
+import { BlogDocument } from 'prismicio-types';
 import { FC } from 'react';
 import readingTime from 'reading-time';
 
@@ -16,21 +18,40 @@ const component: JSXMapSerializer = {
 	),
 };
 
-/**
- * Props for `BlogPost`.
- */
-export type BlogPostProps = SliceComponentProps<Content.BlogPostSlice>;
+const BlogPost = async ({ uid }: { uid: string }) => {
+	const client = createClient();
+	const page = await client.getByUID('blog', uid, {
+		graphQuery: `{
+        blog {
+          title
+          image
+          content
+          category {
+            ...on blog_category {
+              category
+            }
+          }
+          author {
+            ...on blog_author {
+              author
+            }
+          }
+        }
+      }`,
+	});
 
-/**
- * Component for "BlogPost" Slices.
- */
-const BlogPost: FC<BlogPostProps> = async ({ slice }) => {
-	const { category, author, content, image, title, published_date } =
-		slice.primary;
+	const { title, image, content } = page.data;
 
-	const { button, readTime, heading, postDetails, socialMediaLinks } = {
-		...BlogPostHeader2Defaults,
+	// implement type assertion on linked documents
+	const category = page.data.category as typeof page.data.category & {
+		data: Pick<Content.BlogCategoryDocument['data'], 'category'>;
 	};
+
+	// implement type assertion on linked documents
+	const author = page.data.author as typeof page.data.author & {
+		data: Pick<Content.BlogAuthorDocument['data'], 'author'>;
+	};
+
 	return (
 		<Bounded className='px-[5%] py-16 md:py-24 lg:py-28'>
 			<div className='rb-12 mb-12 flex flex-col items-start justify-start md:mb-18 lg:mb-20'>
@@ -40,7 +61,7 @@ const BlogPost: FC<BlogPostProps> = async ({ slice }) => {
 					<ChevronLeftIcon /> All Posts
 				</PrismicNextLink>
 				<div className='rb-4 mb-4 flex w-full gap-4 items-center justify-start'>
-					<Badge>{category}</Badge>
+					<Badge>{category.data.category}</Badge>
 					<p className='inline text-sm font-semibold'>
 						{readingTime(asText(content)).minutes} min read
 					</p>
@@ -60,19 +81,19 @@ const BlogPost: FC<BlogPostProps> = async ({ slice }) => {
 					<div className='mr-8 md:mr-10 lg:mr-12'>
 						<p className='mb-2'>Written by</p>
 						<p className='font-medium neobrutalist-shadow rounded-none text-center px-2'>
-							{author}
+							{author.data.author}
 						</p>
 					</div>
 					<div className='mr-8 md:mr-10 lg:mr-12'>
 						<p className='mb-2'>Published on</p>
 						<p className='font-medium'>
-							{published_date
-								? format(new Date(published_date), 'dd MMMM yyyy')
+							{page.first_publication_date
+								? format(new Date(page.first_publication_date), 'dd MMMM yyyy')
 								: ''}
 						</p>
 					</div>
 				</div>
-				<div className='grid grid-flow-col grid-cols-[max-content] items-start gap-2'>
+				{/* <div className='grid grid-flow-col grid-cols-[max-content] items-start gap-2'>
 					{socialMediaLinks.map((link, index) => (
 						<a
 							key={index}
@@ -81,9 +102,9 @@ const BlogPost: FC<BlogPostProps> = async ({ slice }) => {
 							{link.icon}
 						</a>
 					))}
-				</div>
+				</div> */}
 			</div>
-			<div className='mt-8'>
+			<div className='mt-20'>
 				<PrismicRichText field={content} />
 			</div>
 		</Bounded>
@@ -91,54 +112,3 @@ const BlogPost: FC<BlogPostProps> = async ({ slice }) => {
 };
 
 export default BlogPost;
-
-type ImageProps = {
-	src: string;
-	alt?: string;
-};
-
-type PostDetails = {
-	title: string;
-	description: string;
-};
-
-type SocialMediaLinksProps = {
-	icon: React.ReactNode;
-	url: string;
-};
-
-type Props = {
-	button: ButtonProps;
-	category: string;
-	readTime: string;
-	heading: string;
-	image: ImageProps;
-	postDetails: PostDetails[];
-	socialMediaLinks: SocialMediaLinksProps[];
-};
-
-const BlogPostHeader2Defaults: Props = {
-	button: {
-		title: 'All Posts',
-		variant: 'link',
-		size: 'link',
-		iconLeft: <ChevronLeft />,
-	},
-	category: 'Category',
-	readTime: '5 min read',
-	heading: 'Blog title heading will go here',
-	postDetails: [
-		{ title: 'Written by', description: 'Full Name' },
-		{ title: 'Published on', description: '22 January 2021' },
-	],
-	socialMediaLinks: [
-		{ url: '#', icon: <Link className='size-6' /> },
-		{ url: '#', icon: <Link className='size-6' /> },
-		{ url: '#', icon: <Link className='size-6 p-0.5' /> },
-		{ url: '#', icon: <Link className='size-6' /> },
-	],
-	image: {
-		src: 'https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg',
-		alt: 'Relume placeholder image',
-	},
-};

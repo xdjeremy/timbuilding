@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 
 import { createClient } from '@/prismicio';
 import { components } from '@/slices';
+import BlogPost from './BlogPost';
 
 type Params = { uid: string };
 
@@ -32,7 +33,12 @@ export default async function Page({ params }: { params: Promise<Params> }) {
 	const client = createClient();
 	const page = await client.getByUID('blog', uid).catch(() => notFound());
 
-	return <SliceZone slices={page.data.slices} components={components} />;
+	return (
+		<>
+			<BlogPost uid={uid} />
+			<SliceZone slices={page.data.slices} components={components} />
+		</>
+	);
 }
 
 export async function generateStaticParams() {
