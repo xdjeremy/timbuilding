@@ -90,8 +90,8 @@
 								"shadow_color",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "#938c32",
-									"type": "Color"
+									"type": "Color",
+									"value": "#0891B2"
 								}
 							]
 						]
@@ -102,7 +102,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"provider": "imgix",
 									"url": "https://images.unsplash.com/photo-1582979512210-99b6a53386f9?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw5fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3NDA4MDY1ODN8MA&ixlib=rb-4.0.3&q=85",
 									"alt": "sliced orange fruit on white ceramic plate",
@@ -122,6 +121,8 @@
 											"y": 0
 										}
 									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
 							],
@@ -148,6 +149,14 @@
 										}
 									]
 								}
+							],
+							[
+								"shadow_color",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Color",
+									"value": "#FBBF24"
+								}
 							]
 						]
 					},
@@ -157,7 +166,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"provider": "imgix",
 									"url": "https://images.unsplash.com/photo-1616679312958-a86d9539afae?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3NDA4MDY1ODN8MA&ixlib=rb-4.0.3&q=85",
 									"alt": "orange fruit on white ceramic plate",
@@ -177,6 +185,8 @@
 											"y": 0
 										}
 									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
 							],
@@ -203,6 +213,14 @@
 										}
 									]
 								}
+							],
+							[
+								"shadow_color",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Color",
+									"value": "#DB2777"
+								}
 							]
 						]
 					},
@@ -212,7 +230,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"provider": "imgix",
 									"url": "https://images.unsplash.com/photo-1597714026720-8f74c62310ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzQwODA2NTgzfDA&ixlib=rb-4.0.3&q=85",
 									"alt": "orange fruits under blue sky during daytime",
@@ -232,6 +249,8 @@
 											"y": 0
 										}
 									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
 							],
@@ -258,6 +277,14 @@
 										}
 									]
 								}
+							],
+							[
+								"shadow_color",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Color",
+									"value": "#0891B2"
+								}
 							]
 						]
 					},
@@ -267,7 +294,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"provider": "imgix",
 									"url": "https://images.unsplash.com/photo-1582979512210-99b6a53386f9?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw5fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3NDA4MDY1ODN8MA&ixlib=rb-4.0.3&q=85",
 									"alt": "sliced orange fruit on white ceramic plate",
@@ -287,6 +313,8 @@
 											"y": 0
 										}
 									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
 							],
@@ -313,6 +341,14 @@
 										}
 									]
 								}
+							],
+							[
+								"shadow_color",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Color",
+									"value": "#DB2777"
+								}
 							]
 						]
 					},
@@ -322,7 +358,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"provider": "imgix",
 									"url": "https://images.unsplash.com/photo-1616679312958-a86d9539afae?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3NDA4MDY1ODN8MA&ixlib=rb-4.0.3&q=85",
 									"alt": "orange fruit on white ceramic plate",
@@ -342,6 +377,8 @@
 											"y": 0
 										}
 									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
 							],
@@ -367,6 +404,14 @@
 											"direction": "ltr"
 										}
 									]
+								}
+							],
+							[
+								"shadow_color",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Color",
+									"value": "#FBBF24"
 								}
 							]
 						]
