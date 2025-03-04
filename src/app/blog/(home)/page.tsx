@@ -32,7 +32,11 @@ export async function generateMetadata(): Promise<Metadata> {
 	};
 }
 
-const BlogHome = async () => {
+const BlogHome = async ({
+	searchParams,
+}: {
+	searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) => {
 	const client = createClient();
 	const page = await client.getSingle('blog_list').catch(() => notFound());
 
@@ -47,7 +51,7 @@ const BlogHome = async () => {
 			</div>
 			<div className='flex flex-col justify-start gap-10'>
 				<FeaturedBlog />
-				<BlogList />
+				<BlogList searchParams={searchParams} />
 			</div>
 		</Bounded>
 	);

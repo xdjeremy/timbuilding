@@ -1,14 +1,22 @@
 'use server';
 
 import { createClient } from '@/prismicio';
-import { asText, Content } from '@prismicio/client';
+import { asText, Content, filter } from '@prismicio/client';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 import { format } from 'date-fns';
 import readingTime from 'reading-time';
+import Categories from './Categories';
+import { FC } from 'react';
 
-const BlogList = async () => {
+interface BlogListProps {
+	searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+const BlogList: FC<BlogListProps> = async ({ searchParams }) => {
+
+	const { category } = await searchParams;
+	
 	const client = createClient();
-
 	const documents = await client.getAllByType<
 		Content.BlogDocument & {
 			data: {
@@ -25,6 +33,10 @@ const BlogList = async () => {
 			field: 'document.first_publication_date',
 			direction: 'desc',
 		},
+		filters: category && category !== 'all' 
+			? [filter.at('my.blog.category', category)]
+			: [],
+		pageSize: !category ? 10 : undefined,
 		fetchLinks: [
 			'blog_author.author',
 			'blog_author.avatar',
@@ -32,22 +44,9 @@ const BlogList = async () => {
 		],
 	});
 
-	const { tagline, heading, description, tabs } = {
-		...Blog23Defaults,
-	};
 	return (
 		<div className='flex flex-col justify-center'>
-			<div className='no-scrollbar mb-12 flex w-full items-center justify-start overflow-auto md:mb-16 md:ml-0 md:w-full md:overflow-hidden md:pl-0'>
-				{tabs.map((tab, index) => (
-					<button
-						key={index}
-						value={tab.value}
-						className='px-4 data-[state=active]:border data-[state=active]:border-border-primary data-[state=inactive]:border-transparent data-[state=active]:bg-transparent data-[state=active]:text-neutral-black'>
-						{tab.trigger}
-					</button>
-				))}
-			</div>
-
+			<Categories />
 			<div className='grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-2 md:gap-y-16 lg:grid-cols-2'>
 				{documents.map((document) => (
 					<div
