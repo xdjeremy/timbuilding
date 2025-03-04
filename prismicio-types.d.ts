@@ -62,6 +62,9 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | FrequentlyAskedQuestionsSlice
+  | ContactFormSlice
+  | PricingSlice
   | PortfolioSlice
   | ProcessSlice
   | ServiceSlice

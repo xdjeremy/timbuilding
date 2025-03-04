@@ -35,6 +35,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "frequently_asked_questions": {
+              "type": "SharedSlice"
+            },
+            "contact_form": {
+              "type": "SharedSlice"
+            },
+            "pricing": {
+              "type": "SharedSlice"
+            },
             "portfolio": {
               "type": "SharedSlice"
             },
