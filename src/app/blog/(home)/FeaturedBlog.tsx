@@ -57,7 +57,7 @@ const FeaturedBlog = async () => {
 			<PrismicLink field={featuredBlog} className='size-full'>
 				<PrismicNextImage
 					field={featuredBlog.data.image}
-					className='aspect-[8/6] size-full object-cover neobrutalist-shadow'
+					className='aspect-[8/6] size-full object-cover neobrutalist-shadow rounded-3xl'
 				/>
 			</PrismicLink>
 			<div className='flex h-full flex-col items-start justify-between px-5 py-6 md:p-8 lg:p-12'>
