@@ -20,6 +20,7 @@ interface ContactFieldProps {
 	name: keyof z.infer<typeof ContactSchema>;
 	label: string;
 	type: 'text' | 'textarea';
+	disabled?: boolean;
 }
 
 const ContactField: FC<ContactFieldProps> = (props) => {
@@ -33,9 +34,13 @@ const ContactField: FC<ContactFieldProps> = (props) => {
 				<FormItem>
 					<FormLabel>{props.label}</FormLabel>
 					<FormControl>
-						<FieldTypes type={props.type} field={field} />
+						<FieldTypes
+							type={props.type}
+							field={field}
+							disabled={props.disabled}
+						/>
 					</FormControl>
-					<FormMessage />
+					<FormMessage className='text-red-700' />
 				</FormItem>
 			)}
 		/>
@@ -47,15 +52,17 @@ export default ContactField;
 const FieldTypes = ({
 	type,
 	field,
+	disabled,
 }: {
 	type: 'text' | 'textarea';
 	field: ControllerRenderProps<FieldValues, string>;
+	disabled?: boolean;
 }) => {
 	switch (type) {
 		case 'text':
-			return <Input {...field} />;
+			return <Input {...field} disabled={disabled} />;
 		case 'textarea':
-			return <Textarea {...field} />;
+			return <Textarea {...field} disabled={disabled} />;
 		default:
 			return null;
 	}

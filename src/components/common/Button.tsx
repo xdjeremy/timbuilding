@@ -6,6 +6,7 @@ type ButtonProps = {
 	children: React.ReactNode;
 	className?: string;
 	type?: 'button' | 'submit' | 'reset';
+	disabled?: boolean;
 };
 
 const variants = {
@@ -22,15 +23,17 @@ const Button: FC<ButtonProps> = ({
 	children,
 	className,
 	type = 'button',
+	...props
 }) => {
 	return (
 		<button
 			className={cn(
-				'h-12 px-6 py-3 justify-center items-center gap-2 inline-flex cursor-pointer',
+				'h-12 px-6 py-3 justify-center items-center gap-2 inline-flex cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed',
 				variants[variant],
 				className
 			)}
-			type={type}>
+			type={type}
+			{...props}>
 			<div className='text-base font-normal leading-normal'>{children}</div>
 		</button>
 	);

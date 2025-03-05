@@ -2,6 +2,7 @@
 
 import Button from '@/components/common/Button';
 import { PrismicRichText } from '@/components/PrismicRichText';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -11,8 +12,10 @@ import {
 	FormField,
 	FormItem,
 	FormLabel,
+	FormMessage,
 } from '@relume_io/relume-ui';
-import { FC } from 'react';
+import { CheckCheckIcon, MailWarning } from 'lucide-react';
+import { FC, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { ContactFormProps } from '..';
@@ -21,6 +24,10 @@ import { ContactSchema } from './contact-schema';
 
 const InquiryForm: FC<ContactFormProps> = ({ slice }) => {
 	const { terms_conditions } = slice.primary;
+
+	const [isLoading, setIsLoading] = useState(false);
+	const [isSuccess, setIsSuccess] = useState(false);
+	const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
 	const form = useForm<z.infer<typeof ContactSchema>>({
 		resolver: zodResolver(ContactSchema),
@@ -39,7 +46,9 @@ const InquiryForm: FC<ContactFormProps> = ({ slice }) => {
 	const submitHandler: SubmitHandler<z.infer<typeof ContactSchema>> = async (
 		data
 	) => {
-		await fetch('https://api.web3forms.com/submit', {
+		setIsLoading(true);
+
+		const req = await fetch('https://api.web3forms.com/submit', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -47,37 +56,86 @@ const InquiryForm: FC<ContactFormProps> = ({ slice }) => {
 			},
 			body: JSON.stringify(
 				{
-					data,
+					...data,
+					from_name: data.name,
 					access_key: '726e55ce-20cb-4b46-a01b-4048498227ff',
 				},
 				null,
 				2
 			),
 		});
+
+		const res = await req.json();
+
+		if (res.success) {
+			form.reset();
+			setIsSuccess(true);
+		} else {
+			setErrorMessage(res.message || 'Something went wrong. Please try again.');
+		}
+
+		setIsLoading(false);
 	};
 	return (
 		<Form {...form}>
 			<form
 				onSubmit={form.handleSubmit(submitHandler)}
 				className='mx-auto grid w-full max-w-md grid-cols-1 gap-6'>
-				<ContactField label='Name' name='name' type='text' />
-				<ContactField label='Email' name='email' type='text' />
-				<ContactField label='Message' name='message' type='textarea' />
+				{(isSuccess || errorMessage) && (
+					<Alert variant={isSuccess ? 'default' : 'destructive'}>
+						{isSuccess ? (
+							<CheckCheckIcon className='w-4 h-4' />
+						) : (
+							<MailWarning className='w-4 h-4' />
+						)}
+						<AlertTitle>
+							{isSuccess
+								? 'Your inquiry has been successfully submitted!'
+								: errorMessage}
+						</AlertTitle>
+						<AlertDescription>
+							{isSuccess &&
+								'Thank you for your message. We&apos;ll review your inquiry and respond via email shortly.'}
+						</AlertDescription>
+					</Alert>
+				)}
+				<ContactField
+					label='Name'
+					name='name'
+					type='text'
+					disabled={isLoading}
+				/>
+				<ContactField
+					label='Email'
+					name='email'
+					type='text'
+					disabled={isLoading}
+				/>
+				<ContactField
+					label='Message'
+					name='message'
+					type='textarea'
+					disabled={isLoading}
+				/>
 
 				<FormField
 					control={form.control}
 					name='terms'
 					render={({ field }) => (
-						<FormItem className='flex items-center space-x-2'>
-							<FormControl>
-								<Checkbox
-									checked={field.value}
-									onCheckedChange={field.onChange}
-								/>
-							</FormControl>
-							<FormLabel className='mb-2 text-sm'>
-								<PrismicRichText field={terms_conditions} />
-							</FormLabel>
+						<FormItem>
+							<div className='flex items-center space-x-2'>
+								<FormControl>
+									<Checkbox
+										checked={field.value}
+										onCheckedChange={field.onChange}
+										disabled={isLoading}
+									/>
+								</FormControl>
+								<FormLabel className='text-sm'>
+									<PrismicRichText field={terms_conditions} />
+								</FormLabel>
+							</div>
+							<FormMessage className='text-red-700' />
 						</FormItem>
 					)}
 				/>
@@ -89,7 +147,9 @@ const InquiryForm: FC<ContactFormProps> = ({ slice }) => {
 					/>
 				</div>
 				<div className='text-center'>
-					<Button type='submit'>Submit</Button>
+					<Button type='submit' disabled={isLoading}>
+						Submit
+					</Button>
 				</div>
 			</form>
 		</Form>
