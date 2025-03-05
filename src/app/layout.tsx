@@ -5,11 +5,11 @@ import { Inter } from 'next/font/google';
 import { Metadata } from 'next';
 
 import Footer from '@/components/layout/Footer/Footer';
-import { createClient, repositoryName } from '@/prismicio';
-import Header from '../components/layout/Navigation/Header';
-import React from "react";
-import Script from 'next/script';
 import { generateOrganizationSchema } from '@/components/SEO';
+import { repositoryName } from '@/prismicio';
+import Script from 'next/script';
+import React from "react";
+import Header from '../components/layout/Navigation/Header';
 
 const inter = Inter({
 	subsets: ['latin'],
@@ -18,19 +18,16 @@ const inter = Inter({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const client = createClient();
-  const settings = await client.getSingle('settings');
-
   return {
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://timbuilding.dev'),
     title: {
       template: '%s | TimBuilding',
-      default: 'TimBuilding - Professional Construction Services',
+      default: 'Custom Website Solutions | TimBuilding',
     },
-    description: 'TimBuilding offers professional construction and building services with expertise in residential and commercial projects.',
+    description: 'TimBuilding: Crafting custom websites and digital solutions to help your business thrive online. From design to development, we build your vision.',
     applicationName: 'TimBuilding',
     referrer: 'origin-when-cross-origin',
-    keywords: ['construction', 'building', 'renovation', 'timbuilding', 'professional construction'],
+    keywords: ['custom website design', 'website development', 'digital marketing', 'web solutions', 'small business websites', 'business website', 'TimBuilding', 'responsive web design', 'ux design', 'ui design'],
     authors: [{ name: 'TimBuilding' }],
     creator: 'TimBuilding',
     publisher: 'TimBuilding',
@@ -57,10 +54,11 @@ export default async function RootLayout({
 	children,
 }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<html lang='en' className='{inter.variable}'>
+		<html lang='en' className={inter.variable}>
 			<head>
 				<link rel="icon" href="/favicon.ico" sizes="any" />
 				<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+				<link rel="manifest" href="/site.webmanifest" />
 				<meta name="theme-color" content="#ffffff" />
 				<Script
 					id="schema-org-organization"
