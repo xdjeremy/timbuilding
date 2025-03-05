@@ -89,6 +89,30 @@
           "thumbnails": []
         },
         "type": "Image"
+      },
+      "twitter_card_type": {
+        "type": "Select",
+        "config": {
+          "label": "Twitter Card Type",
+          "placeholder": "",
+          "options": ["summary", "summary_large_image"]
+        }
+      },
+      "canonical_url": {
+        "type": "Text",
+        "config": {
+          "label": "Canonical Url",
+          "placeholder": ""
+        }
+      },
+      "schema_org_data": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Schema Org Data",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
       }
     }
   }

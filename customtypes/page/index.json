@@ -100,6 +100,30 @@
           },
           "thumbnails": []
         }
+      },
+      "twitter_card_type": {
+        "type": "Select",
+        "config": {
+          "label": "twitter_card_type",
+          "placeholder": "",
+          "options": ["summary", "summary_large_image"]
+        }
+      },
+      "canonical_url": {
+        "type": "Text",
+        "config": {
+          "label": "Canonical Url",
+          "placeholder": ""
+        }
+      },
+      "schema_org_data": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Schema Org Data",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
       }
     }
   }

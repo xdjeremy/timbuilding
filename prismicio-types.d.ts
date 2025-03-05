@@ -106,6 +106,39 @@ interface BlogDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Twitter Card Type field in *Blog*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.twitter_card_type
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  twitter_card_type: prismic.SelectField<"summary" | "summary_large_image">;
+
+  /**
+   * Canonical Url field in *Blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.canonical_url
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  canonical_url: prismic.KeyTextField;
+
+  /**
+   * Schema Org Data field in *Blog*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.schema_org_data
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  schema_org_data: prismic.RichTextField;
 }
 
 /**
@@ -275,6 +308,39 @@ interface BlogListDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Twitter Card Type field in *Blog List*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_list.twitter_card_type
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  twitter_card_type: prismic.SelectField<"summary" | "summary_large_image">;
+
+  /**
+   * Canonical Url field in *Blog List*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_list.canonical_url
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  canonical_url: prismic.KeyTextField;
+
+  /**
+   * Schema Org Data field in *Blog List*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_list.schema_org_data
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  schema_org_data: prismic.RichTextField;
 }
 
 /**
@@ -431,6 +497,39 @@ interface PageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * twitter_card_type field in *Page*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.twitter_card_type
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  twitter_card_type: prismic.SelectField<"summary" | "summary_large_image">;
+
+  /**
+   * Canonical Url field in *Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.canonical_url
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  canonical_url: prismic.KeyTextField;
+
+  /**
+   * Schema Org Data field in *Page*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.schema_org_data
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  schema_org_data: prismic.RichTextField;
 }
 
 /**
