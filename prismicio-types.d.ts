@@ -417,6 +417,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | AboutUsSlice
   | FrequentlyAskedQuestionsSlice
   | ContactFormSlice
   | PricingSlice
