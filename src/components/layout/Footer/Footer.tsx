@@ -1,12 +1,11 @@
 'use server';
 
 import { Bounded } from '@/components/Bounded';
-import Button from '@/components/common/Button';
 import { createClient } from '@/prismicio';
 import { asText } from '@prismicio/client';
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 import { PrismicText } from '@prismicio/react';
-import React from 'react';
+import MailingList from './MailingList';
 
 const Footer = async () => {
 	const client = createClient();
@@ -36,18 +35,7 @@ const Footer = async () => {
 				</div>
 				<div className='max-w-md lg:min-w-[25rem]'>
 					<p className='mb-3 font-semibold md:mb-4'>Subscribe</p>
-					<form className='mb-3 grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-[1fr_max-content] sm:gap-y-4 md:gap-4'>
-						<div className='relative flex size-full items-center'>
-							<input
-								type='email'
-								className='flex size-full min-h-11 border border-border-primary bg-background-primary py-2 align-middle file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-neutral focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 px-3'
-								id='email'
-								placeholder='Enter your email'
-								value=''
-							/>
-						</div>
-						<Button variant='outline'> Subscribe</Button>
-					</form>
+					<MailingList />
 					<div>
 						<p className='text-xs'>
 							By subscribing you agree to with our{' '}
