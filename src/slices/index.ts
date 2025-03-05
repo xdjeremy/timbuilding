@@ -18,8 +18,5 @@ export const components = {
   pricing: dynamic(() => import("./Pricing")),
   process: dynamic(() => import("./Process")),
   process_overview: dynamic(() => import("./ProcessOverview")),
-  quote: dynamic(() => import("./Quote")),
   service: dynamic(() => import("./Service")),
-  text: dynamic(() => import("./Text")),
-  text_with_image: dynamic(() => import("./TextWithImage")),
 };
