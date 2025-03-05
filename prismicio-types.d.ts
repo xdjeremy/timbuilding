@@ -631,6 +631,41 @@ export type AllDocumentTypes =
   | SettingsDocument;
 
 /**
+ * Item in *AboutUs → Left Background Color → Primary → IconsAndTexts*
+ */
+export interface AboutUsSliceLeftBackgroundColorPrimaryIconsandtextsItem {
+  /**
+   * Icon Title field in *AboutUs → Left Background Color → Primary → IconsAndTexts*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.leftBackgroundColor.primary.iconsandtexts[].icon_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  icon_title: prismic.RichTextField;
+
+  /**
+   * Icon Description field in *AboutUs → Left Background Color → Primary → IconsAndTexts*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.leftBackgroundColor.primary.iconsandtexts[].icon_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  icon_description: prismic.RichTextField;
+
+  /**
+   * Icons field in *AboutUs → Left Background Color → Primary → IconsAndTexts*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.leftBackgroundColor.primary.iconsandtexts[].icons
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icons: prismic.SelectField<"trendingUp" | "gitMerge">;
+}
+
+/**
  * Primary content in *AboutUs → Default → Primary*
  */
 export interface AboutUsSliceDefaultPrimary {
@@ -689,9 +724,91 @@ export type AboutUsSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *AboutUs → Left Background Color → Primary*
+ */
+export interface AboutUsSliceLeftBackgroundColorPrimary {
+  /**
+   * Title field in *AboutUs → Left Background Color → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.leftBackgroundColor.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Image field in *AboutUs → Left Background Color → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.leftBackgroundColor.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Badge field in *AboutUs → Left Background Color → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.leftBackgroundColor.primary.badge
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  badge: prismic.KeyTextField;
+
+  /**
+   * Description field in *AboutUs → Left Background Color → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.leftBackgroundColor.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button field in *AboutUs → Left Background Color → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.leftBackgroundColor.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * IconsAndTexts field in *AboutUs → Left Background Color → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.leftBackgroundColor.primary.iconsandtexts[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  iconsandtexts: prismic.GroupField<
+    Simplify<AboutUsSliceLeftBackgroundColorPrimaryIconsandtextsItem>
+  >;
+}
+
+/**
+ * Left Background Color variation for AboutUs Slice
+ *
+ * - **API ID**: `leftBackgroundColor`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutUsSliceLeftBackgroundColor = prismic.SharedSliceVariation<
+  "leftBackgroundColor",
+  Simplify<AboutUsSliceLeftBackgroundColorPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *AboutUs*
  */
-type AboutUsSliceVariation = AboutUsSliceDefault;
+type AboutUsSliceVariation =
+  | AboutUsSliceDefault
+  | AboutUsSliceLeftBackgroundColor;
 
 /**
  * AboutUs Shared Slice
@@ -2667,8 +2784,11 @@ declare module "@prismicio/client" {
       AllDocumentTypes,
       AboutUsSlice,
       AboutUsSliceDefaultPrimary,
+      AboutUsSliceLeftBackgroundColorPrimaryIconsandtextsItem,
+      AboutUsSliceLeftBackgroundColorPrimary,
       AboutUsSliceVariation,
       AboutUsSliceDefault,
+      AboutUsSliceLeftBackgroundColor,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,
       CallToActionSliceCtaTwoButtonsPrimary,

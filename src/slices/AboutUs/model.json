@@ -47,6 +47,99 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "leftBackgroundColor",
+      "name": "Left Background Color",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2,strong"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "badge": {
+          "type": "Text",
+          "config": {
+            "label": "Badge",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "Button",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        },
+        "iconsandtexts": {
+          "type": "Group",
+          "config": {
+            "label": "IconsAndTexts",
+            "repeat": true,
+            "fields": {
+              "icon_title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Icon Title",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading6"
+                }
+              },
+              "icon_description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Icon Description",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph"
+                }
+              },
+              "icons": {
+                "type": "Select",
+                "config": {
+                  "label": "Icons",
+                  "placeholder": "",
+                  "options": [
+                    "trendingUp",
+                    "gitMerge"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

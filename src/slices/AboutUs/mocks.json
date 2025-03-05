@@ -17,7 +17,6 @@
 				]
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"provider": "imgix",
 				"url": "https://images.unsplash.com/photo-1553877522-43269d4ea984?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxtZWV0aW5nfGVufDB8fHx8MTc0MTE2MDMzN3ww&ixlib=rb-4.0.3&q=85",
 				"alt": "man using MacBook",
@@ -37,6 +36,8 @@
 						"y": 0
 					}
 				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
 			"badge": {
@@ -65,5 +66,181 @@
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "leftBackgroundColor",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Unlock Your Business's Online Potential Today",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 23,
+									"end": 39
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"image": {
+				"__TYPE__": "ImageContent",
+				"provider": "imgix",
+				"url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNXx8bWVldGluZ3xlbnwwfHx8fDE3NDExNjAzMzd8MA&ixlib=rb-4.0.3&q=85",
+				"alt": "group of people using laptop computer",
+				"origin": {
+					"id": "QckxruozjRg",
+					"url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNXx8bWVldGluZ3xlbnwwfHx8fDE3NDExNjAzMzd8MA&ixlib=rb-4.0.3&q=85",
+					"width": 7952,
+					"height": 5304
+				},
+				"width": 7952,
+				"height": 5304,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"thumbnails": {}
+			},
+			"badge": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Growth"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "At TimBuilding, we empower small to medium-sized businesses by enhancing their online visibility. Our tailored web solutions lead to increased traffic and higher profits.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"button": {
+				"__TYPE__": "LinkContent",
+				"key": "ce02bbe9-eff8-43e9-b8e6-90b0c84ba9f7",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "Learn More"
+				}
+			},
+			"iconsandtexts": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icon_title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading6",
+											"content": {
+												"text": "Increased Revenue",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"icon_description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Our websites attract more visitors, converting them into loyal customers and boosting sales.",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"icons",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "trendingUp",
+									"type": "Select"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icons",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Select",
+									"value": "gitMerge"
+								}
+							],
+							[
+								"icon_title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading6",
+											"content": {
+												"text": "Streamlined Operations",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"icon_description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Custom applications simplify processes, saving time and resources for your business.",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]
