@@ -631,6 +631,81 @@ export type AllDocumentTypes =
   | SettingsDocument;
 
 /**
+ * Primary content in *AboutUs → Default → Primary*
+ */
+export interface AboutUsSliceDefaultPrimary {
+  /**
+   * Title field in *AboutUs → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Image field in *AboutUs → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Badge field in *AboutUs → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.default.primary.badge
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  badge: prismic.KeyTextField;
+
+  /**
+   * Description field in *AboutUs → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for AboutUs Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutUsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutUsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AboutUs*
+ */
+type AboutUsSliceVariation = AboutUsSliceDefault;
+
+/**
+ * AboutUs Shared Slice
+ *
+ * - **API ID**: `about_us`
+ * - **Description**: AboutUs
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutUsSlice = prismic.SharedSlice<
+  "about_us",
+  AboutUsSliceVariation
+>;
+
+/**
  * Primary content in *CallToAction → Default → Primary*
  */
 export interface CallToActionSliceDefaultPrimary {
@@ -2590,6 +2665,10 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
+      AboutUsSlice,
+      AboutUsSliceDefaultPrimary,
+      AboutUsSliceVariation,
+      AboutUsSliceDefault,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,
       CallToActionSliceCtaTwoButtonsPrimary,
