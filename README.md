@@ -99,4 +99,4 @@ import { components } from './HeroRichText';
 The Hero slice demonstrates how to extend base functionality:
 - Local `components` prop overrides default serializers
 - Maintains core typography system through Heading component
-- Enables slice-specific rich text configurations
+- Enables slice-specific rich text configurations.
