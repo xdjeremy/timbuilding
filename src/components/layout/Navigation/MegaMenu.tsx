@@ -6,11 +6,8 @@ import { ChevronDown } from 'lucide-react';
 import { FC, useState } from 'react';
 import { useHeader } from './HeaderProvider';
 
-interface MegaMenuLink {
-	title: string;
-}
 
-const MegaMenu: FC<MegaMenuLink> = ({ title }) => {
+const MegaMenu = () => {
 	const isMobile = useMediaQuery('(max-width: 991px)');
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -23,7 +20,7 @@ const MegaMenu: FC<MegaMenuLink> = ({ title }) => {
 			<button
 				className='relative flex w-full items-center justify-between whitespace-nowrap py-3 text-md lg:w-auto lg:justify-start lg:gap-2 lg:px-4 lg:py-6 lg:text-base hover:text-brand-telemagenta'
 				onClick={() => setIsDropdownOpen((prev) => !prev)}>
-				<span>{title}</span>
+				<span>Blogs</span>
 				<motion.span
 					animate={isDropdownOpen ? 'rotated' : 'initial'}
 					variants={{
