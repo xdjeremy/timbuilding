@@ -19,22 +19,21 @@ export async function generateMetadata({
 	const { uid } = await params;
 	const client = createClient();
 	const page = await client.getByUID('blog', uid).catch(() => notFound());
-	
+
 	// Get author information if available
 	let authorName = 'TimBuilding';
-	
-	// Get category information if available
-	let categoryName = null;
 
 	return generateSEO({
 		title: page.data.meta_title || asText(page.data.title),
 		description: page.data.meta_description || null,
-		image: page.data.meta_image?.url ? {
-			url: page.data.meta_image.url,
-			alt: page.data.meta_image.alt || asText(page.data.title),
-			width: page.data.meta_image.dimensions?.width,
-			height: page.data.meta_image.dimensions?.height,
-		} : null,
+		image: page.data.meta_image?.url
+			? {
+					url: page.data.meta_image.url,
+					alt: page.data.meta_image.alt || asText(page.data.title),
+					width: page.data.meta_image.dimensions?.width,
+					height: page.data.meta_image.dimensions?.height,
+				}
+			: null,
 		url: `/blog/${uid}`,
 		type: 'article',
 		publishedTime: page.first_publication_date,
@@ -48,17 +47,19 @@ export default async function Page({ params }: { params: Promise<Params> }) {
 	const { uid } = await params;
 	const client = createClient();
 	const page = await client.getByUID('blog', uid).catch(() => notFound());
-	
+
 	// Get author information if available
 	let authorName = 'TimBuilding';
 
 	const jsonLd = generateJSONLD({
 		title: page.data.meta_title || asText(page.data.title),
 		description: page.data.meta_description || null,
-		image: page.data.meta_image?.url ? {
-			url: page.data.meta_image.url,
-			alt: page.data.meta_image.alt || asText(page.data.title),
-		} : null,
+		image: page.data.meta_image?.url
+			? {
+					url: page.data.meta_image.url,
+					alt: page.data.meta_image.alt || asText(page.data.title),
+				}
+			: null,
 		url: `/blog/${uid}`,
 		type: 'article',
 		publishedTime: page.first_publication_date,
@@ -69,8 +70,8 @@ export default async function Page({ params }: { params: Promise<Params> }) {
 	return (
 		<>
 			<Script
-				id="schema-org-article"
-				type="application/ld+json"
+				id='schema-org-article'
+				type='application/ld+json'
 				dangerouslySetInnerHTML={{ __html: jsonLd }}
 			/>
 			<BlogPost uid={uid} />

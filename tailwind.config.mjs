@@ -9,6 +9,7 @@ import relumeTailwind from '@relume_io/relume-tailwind'
 const config = {
     content: ['./node_modules/@relume_io/relume-ui/dist/**/*.{js,ts,jsx,tsx}'],
     presets: [relumeTailwind],
+    plugins: [require('@tailwindcss/typography')],
 }
 
 export default config

@@ -6,8 +6,11 @@ import { ChevronDown } from 'lucide-react';
 import { FC, useState } from 'react';
 import { useHeader } from './HeaderProvider';
 
+interface MegaMenuProps {
+	onLinkClick: () => void;
+}
 
-const MegaMenu = () => {
+const MegaMenu: FC<MegaMenuProps> = ({ onLinkClick }) => {
 	const isMobile = useMediaQuery('(max-width: 991px)');
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -73,6 +76,7 @@ const MegaMenu = () => {
 									<div className='grid w-full auto-cols-max auto-rows-max grid-cols-1 grid-rows-[max-content] gap-x-12 gap-y-8 sm:grid-cols-2 lg:gap-y-2'>
 										{blogs.map((blog) => (
 											<PrismicNextLink
+												onClick={onLinkClick}
 												key={blog.id}
 												document={blog}
 												className='grid max-w-full auto-cols-fr grid-cols-1 items-start gap-x-6 gap-y-4 py-2 lg:grid-cols-[0.5fr_1fr] lg:gap-y-0 hover:text-brand-telemagenta'>

@@ -25,6 +25,6 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
 				<PrismicText field={item.label} />
 			</PrismicNextLink>
 		))}
-		<MegaMenu />
+		<MegaMenu onLinkClick={onLinkClick} />
 	</div>
 );

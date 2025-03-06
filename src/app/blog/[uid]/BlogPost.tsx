@@ -8,6 +8,7 @@ import { JSXMapSerializer } from '@prismicio/react';
 import { format } from 'date-fns';
 import { ChevronLeftIcon } from 'lucide-react';
 import readingTime from 'reading-time';
+import { Component } from './ContentComponent';
 
 const component: JSXMapSerializer = {
 	heading1: ({ children }) => (
@@ -70,7 +71,7 @@ const BlogPost = async ({ uid }: { uid: string }) => {
 				</div>
 				<PrismicNextImage
 					field={image}
-					className='aspect-[5/2] size-full object-cover h-[600px] neobrutalist-shadow-right'
+					className='aspect-[5/2] size-full object-cover lg:h-[600px] h-96 neobrutalist-shadow-right'
 				/>
 			</div>
 			<div className='flex w-full flex-col items-start justify-between md:flex-row gap-6'>
@@ -101,8 +102,8 @@ const BlogPost = async ({ uid }: { uid: string }) => {
 					))}
 				</div> */}
 			</div>
-			<div className='mt-20'>
-				<PrismicRichText field={content} />
+			<div className='mt-20 prose prose-lg mx-auto w-full max-w-lg dark:prose-invert'>
+				<PrismicRichText field={content} components={Component} />
 			</div>
 		</Bounded>
 	);

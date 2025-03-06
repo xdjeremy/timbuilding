@@ -27,7 +27,7 @@ const Navigation: FC<NavigationProps> = ({ settings, navigation }) => {
 					/>
 				</PrismicNextLink>
 
-				<DesktopNavigation navigation={navigation} />
+				<DesktopNavigation navigation={navigation} onLinkClick={() => setIsMobileMenuOpen(false)} />
 
 				<HamburgerButton
 					isOpen={isMobileMenuOpen}

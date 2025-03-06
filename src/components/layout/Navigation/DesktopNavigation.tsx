@@ -8,10 +8,12 @@ import MegaMenu from './MegaMenu';
 
 interface DesktopNavigationProps {
 	navigation: NavigationDocument;
+	onLinkClick: () => void;
 }
 
 export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
 	navigation,
+	onLinkClick
 }) => (
 	<div className='absolute hidden h-screen overflow-auto border-b border-border-primary bg-background-primary px-[5%] pb-24 pt-4 md:pb-0 lg:static lg:ml-6 lg:flex lg:h-auto lg:flex-1 lg:items-center lg:justify-between lg:border-none lg:bg-none lg:px-0 lg:pt-0'>
 		<div className='flex flex-col items-center lg:flex-row'>
@@ -23,7 +25,7 @@ export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
 					<PrismicText field={item.label} />
 				</PrismicNextLink>
 			))}
-			<MegaMenu />
+			<MegaMenu onLinkClick={onLinkClick} />
 		</div>
 	</div>
 );
