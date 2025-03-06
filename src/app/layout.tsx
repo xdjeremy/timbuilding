@@ -82,9 +82,7 @@ export default async function RootLayout({
 			</head>
 			<body className='overflow-x-hidden antialiased w-screen font-redhat'>
 				<Header />
-				<div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
 					{children}
-				</div>
 				<PrismicPreview repositoryName={repositoryName} />
 				<Footer />
 			</body>

@@ -39,6 +39,7 @@
 	},
 	"devDependencies": {
 		"@slicemachine/adapter-next": "^0.3.68",
+		"@svgr/plugin-jsx": "^8.1.0",
 		"@svgr/webpack": "^8.1.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/postcss": "^4.0.1",
@@ -48,6 +49,7 @@
 		"concurrently": "^9.1.2",
 		"eslint": "^9.19.0",
 		"eslint-config-next": "^15.1.6",
+		"next-transpile-modules": "^10.0.1",
 		"postcss": "^8.5.1",
 		"prettier": "^3.4.2",
 		"prettier-plugin-tailwindcss": "^0.6.11",

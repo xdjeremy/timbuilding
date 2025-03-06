@@ -5,6 +5,7 @@ import { Sparkle } from 'lucide-react';
 import React, { FC } from 'react';
 import { FrequentlyAskedQuestionsProps } from '..';
 import { JSXMapSerializer } from '@prismicio/react';
+import Container from '@/components/Container';
 
 const component: JSXMapSerializer = {
   heading2: ({ children }) => (
@@ -24,7 +25,7 @@ const DefaultFAQs: FC<FrequentlyAskedQuestionsProps> = ({ slice }) => {
     <Bounded
 			as='section'
 			className='font-redhat text-brand-dark-blue px-[5%] py-16 md:py-24 lg:py-28 border-b-4 border-black relative'>
-			<div className='container grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-12 lg:grid-cols-[.75fr,1fr] lg:gap-x-20'>
+			<Container className='grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-12 lg:grid-cols-[.75fr,1fr] lg:gap-x-20'>
 				<div>
 					<PrismicRichText field={text} components={component} />
 					<div className='mt-6 md:mt-8 relative'>
@@ -44,7 +45,7 @@ const DefaultFAQs: FC<FrequentlyAskedQuestionsProps> = ({ slice }) => {
 						</AccordionItem>
 					))}
 				</Accordion>
-			</div>
+			</Container>
 		</Bounded>
   );
 };
