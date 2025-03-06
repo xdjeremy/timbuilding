@@ -1,7 +1,7 @@
-import { Content } from '@prismicio/client';
 import { PrismicRichText } from '@/components/PrismicRichText';
-import { JSXMapSerializer } from '@prismicio/react';
 import { iconComponent } from '@/slices/Process/icons';
+import { Content } from '@prismicio/client';
+import { JSXMapSerializer } from '@prismicio/react';
 
 interface StepItemProps {
   icon: Content.ProcessSlice['primary']['steps'][number]['icon'];
@@ -26,7 +26,7 @@ export const StepItem = ({
   subtext,
   isDesktop = false,
   position,
-  dimensions,
+  dimensions
 }: StepItemProps) => {
   return (
     <div className="flex flex-col p-3 items-center text-center">
@@ -43,5 +43,5 @@ const component: JSXMapSerializer = {
       {children}
     </h3>
   ),
-  paragraph: ({ children }) => <p className="md:text-md">{children}</p>,
+  paragraph: ({ children }) => <p>{children}</p>
 };

@@ -3,12 +3,10 @@ import { JSXMapSerializer } from '@prismicio/react';
 
 export const component: JSXMapSerializer = {
 	heading2: ({ children }) => (
-		<Heading
-			as='h2'
-			size='lg'
+		<h2
 			className='mb-5 mt-8 text-5xl font-extrabold md:mb-6 md:text-7xl lg:text-8xl'>
 			{children}
-		</Heading>
+		</h2>
 	),
 	strong: ({ children }) => (
 		<span className='text-brand-telemagenta'>{children}</span>
