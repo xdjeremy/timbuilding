@@ -20,7 +20,7 @@ export function Bounded({
 		<Comp
 			data-collapsible={collapsible}
 			className={clsx(
-				'px-6 overflow-x-hidden h-full relative border-b-4 border-black',
+				'px-6 overflow-hidden relative border-b-4 border-black',
 				yPadding === 'sm' && 'py-16 md:py-24 lg:py-28',
 				yPadding === 'base' && 'py-20 md:py-28',
 				yPadding === 'lg' && 'py-32 md:py-48',

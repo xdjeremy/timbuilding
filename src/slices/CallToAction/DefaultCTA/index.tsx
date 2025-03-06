@@ -5,6 +5,7 @@ import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 import { JSXMapSerializer } from '@prismicio/react';
 import { FC } from 'react';
 import { CallToActionProps } from "..";
+import Container from '@/components/Container';
 
 const component: JSXMapSerializer = {
     heading2: ({ children }) => (
@@ -26,8 +27,8 @@ const DefaultCTA: FC<CallToActionProps> = ({ slice }) => {
     if (slice.variation !== 'default') return null;
 
     return (
-        <Bounded as='section' className='px-[5%] py-16 md:py-24 lg:py-28 relative font-redhat text-brand-dark-blue border-b-4 border-black h-fit overflow-y-hidden overflow-x-hidden'>
-            <div className='container grid w-full grid-cols-1 items-start justify-between gap-6'>
+        <Bounded as='section'>
+            <Container className='grid w-full grid-cols-1 items-start justify-between gap-6'>
                 <div className='md:mr-12 lg:mr-0'>
                     <div className='w-full max-w-lg'>
                         <PrismicRichText field={title} components={component} />
@@ -39,7 +40,7 @@ const DefaultCTA: FC<CallToActionProps> = ({ slice }) => {
                         <Button>{button.text}</Button>
                     </PrismicNextLink>
                 </div>
-            </div>
+            </Container>
             <PrismicNextImage
                 className='absolute bottom-0 left-0 -z-10 lg:hidden'
                 field={background_mobile}
