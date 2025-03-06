@@ -1,13 +1,12 @@
+import { Bounded } from '@/components/Bounded';
 import Badge from '@/components/common/Badge';
 import Button from '@/components/common/Button';
-import { Heading } from '@/components/Heading';
 import { PrismicRichText } from '@/components/PrismicRichText';
-import FeatureItem from './components/FeatureItem';
 import { Content } from '@prismicio/client';
-import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
+import { PrismicNextLink } from '@prismicio/next';
 import { JSXMapSerializer, SliceComponentProps } from '@prismicio/react';
 import { FC } from 'react';
-import { Bounded } from '@/components/Bounded';
+import FeatureItem from './components/FeatureItem';
 
 /**
  * Props for `Features`.
@@ -16,16 +15,20 @@ export type FeaturesProps = SliceComponentProps<Content.FeaturesSlice>;
 
 const components: JSXMapSerializer = {
 	heading2: ({ children }) => (
-		<h2 className='mb-5 text-5xl font-extrabold md:mb-6 md:text-7xl lg:text-8xl'>
+		<h2 className='mb-5 text-4xl font-extrabold whitespace-normal md:text-5xl md:mb-6 lg:text-6xl xl:text-7xl 2xl:text-8xl overflow-x-visible overflow-y-visible'>
 			{children}
 		</h2>
 	),
 	heading3: ({ children }) => (
-		<h3 className='mb-5 text-2xl font-bold md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl'>
+		<h3 className='mb-5 text-xl font-bold break-words whitespace-normal md:text-2xl md:mb-6 md:leading-[1.3] lg:text-3xl'>
 			{children}
 		</h3>
 	),
-	strong: ({ children }) => <span className='highlight'>{children}</span>,
+	strong: ({ children }) => (
+		<span className='highlight inline-block px-[0.1em] -mx-[0.1em]'>
+			{children}
+		</span>
+	),
 	paragraph: ({ children }) => <p className='md:text-md'>{children}</p>,
 };
 /**
@@ -39,10 +42,10 @@ const Features: FC<FeaturesProps> = ({ slice }) => {
 			as='section'
 			data-slice-type={slice.slice_type}
 			yPadding='none'
-			className='font-redhat text-brand-dark-blue relative border-b-4 border-black px-[5%] py-16 md:py-24 lg:py-28'>
-			<div className='flex flex-col items-center'>
+			className='font-redhat text-brand-dark-blue relative border-b-4 border-black px-4 py-16 md:px-8 md:py-24 lg:py-28 z-0'>
+			<div className='flex flex-col items-center overflow-visible'>
 				<div className='rb-12 mb-12 text-center md:mb-18 lg:mb-20'>
-					<div className='w-full max-w-lg'>
+					<div className='w-full max-w-[95vw] sm:max-w-[90vw] md:max-w-[80vw] lg:max-w-[70vw] xl:max-w-[60vw] px-4 sm:px-6 relative z-10'>
 						<div className='mb-10'>
 							<Badge>{badge}</Badge>
 						</div>
@@ -50,7 +53,7 @@ const Features: FC<FeaturesProps> = ({ slice }) => {
 						<PrismicRichText field={subtitle} components={components} />
 					</div>
 				</div>
-				<div className='grid grid-cols-1 items-start justify-center gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12'>
+				<div className='grid grid-cols-1 items-start justify-center gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12 overflow-visible'>
 					<FeatureItem
 						image={features[0]?.image}
 						title={features[0]?.title}

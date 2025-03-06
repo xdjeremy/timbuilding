@@ -92,13 +92,22 @@
 	&::after {
 		content: '';
 		background-color: #fbbf24;
-		height: 25px;
+		height: 20px;
 		display: block;
 		position: absolute;
-		width: 110%;
-		left: -5%;
-		bottom: -5%;
+		width: 105%;
+		left: -2.5%;
+		bottom: -2.5%;
 		z-index: -1;
+	}
+
+	@media (min-width: 640px) {
+		&::after {
+			height: 25px;
+			width: 110%;
+			left: -5%;
+			bottom: -5%;
+		}
 	}
 
 	@media (min-width: 1024px) {
