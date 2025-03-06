@@ -1,18 +1,67 @@
 [
 	{
 		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"page_header": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Together"
+						}
+					}
+				]
+			},
+			"page_sub_header": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "At TimBuilding, we empower small to medium businesses to thrive in the digital landscape."
+			},
+			"header_button": {
+				"key": "d85aba52-ad36-4d56-a215-7bf8212741f8",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev",
+					"text": "Learn More",
+					"variant": "Primary"
+				}
+			},
+			"page_header_background": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "EMPOWER",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"header_button_text": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Learn more"
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
 		"variation": "pageHeaderNoButtons",
 		"primary": {
 			"page_header": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading2",
+						"type": "heading1",
 						"content": {
-							"text": "Elevate Your Online Presence",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Provide"
+						}
 					}
 				]
 			},
@@ -50,12 +99,10 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading3",
+						"type": "heading1",
 						"content": {
-							"text": "WEB SOLUTIONS",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Tight"
+						}
 					}
 				]
 			},
@@ -137,12 +184,10 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading2",
+						"type": "heading1",
 						"content": {
-							"text": "Transparent Pricing \nPlans",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Express"
+						}
 					}
 				]
 			},
@@ -181,58 +226,5 @@
 				"value": []
 			}
 		]
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {
-			"page_header": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "Your Online Success",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			},
-			"page_sub_header": {
-				"__TYPE__": "FieldContent",
-				"type": "Text",
-				"value": "At TimBuilding, we empower small to medium businesses to thrive in the digital landscape."
-			},
-			"header_button": {
-				"__TYPE__": "LinkContent",
-				"key": "d85aba52-ad36-4d56-a215-7bf8212741f8",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "https://slicemachine.dev",
-					"text": "Learn More",
-					"variant": "Primary"
-				}
-			},
-			"page_header_background": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "EMPOWER",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			},
-			"header_button_text": {
-				"__TYPE__": "FieldContent",
-				"type": "Text",
-				"value": "Learn more"
-			}
-		},
-		"items": []
 	}
 ]
