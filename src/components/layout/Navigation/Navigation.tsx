@@ -51,7 +51,10 @@ const Navigation: FC<NavigationProps> = ({ settings, navigation }) => {
 							exit='close'
 							transition={{ duration: 0.4 }}
 							className='absolute left-0 right-0 top-0 block h-dvh overflow-auto border-b border-border-primary bg-background-primary px-[5%] pb-8 pt-4'>
-							<MobileNavigation navigation={navigation} />
+							<MobileNavigation 
+								navigation={navigation} 
+								onLinkClick={() => setIsMobileMenuOpen(false)}
+							/>
 						</motion.div>
 					</motion.div>
 				)}
