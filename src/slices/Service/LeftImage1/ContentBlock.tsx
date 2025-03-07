@@ -20,23 +20,23 @@ const ContentBlock: FC<ContentBlockProps> = ({
   badge,
   title,
   description,
-  items,
+  items
 }) => {
   return (
-    <div className='order-1 md:order-2'>
-      <Badge variant='amber'>{badge}</Badge>
+    <div className="order-1 md:order-2">
+      <Badge variant="amber">{badge}</Badge>
       <PrismicRichText field={title} components={component} />
       <PrismicRichText field={description} components={component} />
-      <div className='grid grid-cols-1 gap-4 py-2'>
+      <div className="grid grid-cols-1 gap-4 py-2">
         {items.map((item, index) => (
-          <div key={index} className='flex self-start'>
-            <div className='mr-4 flex-none self-start'>
+          <div key={index} className="flex self-start">
+            <div className="mr-4 flex-none self-start">
               <Icon icon={item.icon || ''} />
             </div>
             <PrismicRichText
               field={item.text}
               components={{
-                paragraph: ({ children }) => <p>{children}</p>,
+                paragraph: ({ children }) => <p>{children}</p>
               }}
             />
           </div>
@@ -49,13 +49,13 @@ const ContentBlock: FC<ContentBlockProps> = ({
 const Icon = ({ icon }: { icon: string }) => {
   switch (icon) {
     case 'settings':
-      return <Settings className='size-6' />;
+      return <Settings className="size-6" />;
     case 'monitorsmartphone':
-      return <MonitorSmartphone className='size-6' />;
+      return <MonitorSmartphone className="size-6" />;
     case 'search':
-      return <Search className='size-6' />;
+      return <Search className="size-6" />;
     default:
-      return <Settings className='size-6' />;
+      return <Settings className="size-6" />;
   }
 };
 

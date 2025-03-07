@@ -3,7 +3,7 @@ import { JSXMapSerializer } from '@prismicio/react';
 
 export const Component: JSXMapSerializer = {
   heading1: ({ children }) => (
-    <h1 className="mt-8 mb-4 text-4xl font-bold leading-tight md:text-5xl dark:text-inherit">
+    <h1 className="mt-8 mb-4 text-4xl leading-tight font-bold md:text-5xl dark:text-inherit">
       {children}
     </h1>
   ),
@@ -23,7 +23,7 @@ export const Component: JSXMapSerializer = {
     </p>
   ),
   oList: ({ children }) => (
-    <ol className="mb-6 pl-6 space-y-3 text-base text-gray-800 list-decimal dark:text-gray-200">
+    <ol className="mb-6 list-decimal space-y-3 pl-6 text-base text-gray-800 dark:text-gray-200">
       {children}
     </ol>
   ),
@@ -33,7 +33,7 @@ export const Component: JSXMapSerializer = {
     </li>
   ),
   list: ({ children }) => (
-    <ul className="mb-6 pl-6 space-y-3 text-base text-gray-800 list-disc dark:text-gray-200">
+    <ul className="mb-6 list-disc space-y-3 pl-6 text-base text-gray-800 dark:text-gray-200">
       {children}
     </ul>
   ),
@@ -43,7 +43,7 @@ export const Component: JSXMapSerializer = {
     </li>
   ),
   preformatted: ({ children }) => (
-    <pre className="p-4 mb-6 overflow-x-auto text-sm bg-gray-50 rounded-lg md:p-6 md:text-base dark:bg-gray-800/50">
+    <pre className="mb-6 overflow-x-auto rounded-lg bg-gray-50 p-4 text-sm md:p-6 md:text-base dark:bg-gray-800/50">
       <code className="font-mono">{children}</code>
     </pre>
   ),
@@ -55,8 +55,9 @@ export const Component: JSXMapSerializer = {
   hyperlink: ({ children, node }) => (
     <PrismicNextLink
       field={node.data}
-      className='underline decoration-1 underline-offset-2 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'>
+      className="hover:text-primary-600 dark:hover:text-primary-400 underline decoration-1 underline-offset-2 transition-colors"
+    >
       {children}
     </PrismicNextLink>
-  ),
+  )
 };

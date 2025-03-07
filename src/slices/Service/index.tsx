@@ -14,13 +14,13 @@ export type ServiceProps = SliceComponentProps<Content.ServiceSlice>;
  * Component for "Service" Slices.
  */
 const Service: FC<ServiceProps> = (slice) => {
-	return (
-		<>
-			<LeftImage1 {...slice} />
-			<RightImage1 {...slice} />
-			<LeftImage2 {...slice} />
-		</>
-	);
+  return (
+    <>
+      <LeftImage1 {...slice} />
+      <RightImage1 {...slice} />
+      <LeftImage2 {...slice} />
+    </>
+  );
 };
 
 export default Service;

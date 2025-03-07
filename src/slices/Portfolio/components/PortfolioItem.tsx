@@ -28,7 +28,7 @@ const PortfolioItem: FC<PortfolioItemProps> = async ({ uid }) => {
 
   return (
     <article className="mb-8 break-inside-avoid">
-      <div className="mb-5 md:mb-6 relative">
+      <div className="relative mb-5 md:mb-6">
         <PrismicNextImage
           field={image}
           className={cn(projectImageClassName(image_size))}

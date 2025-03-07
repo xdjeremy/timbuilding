@@ -9,4 +9,3 @@ export const components: JSXMapSerializer = {
   ),
   paragraph: ({ children }) => <p className="md:text-md">{children}</p>
 };
-

@@ -10,46 +10,47 @@ import { ServiceProps } from '..';
 import { component } from '../ServicesRichText';
 
 const RightImage1: FC<ServiceProps> = ({ slice }) => {
-	const { badge, image, title, description, button } = slice.primary;
+  const { badge, image, title, description, button } = slice.primary;
 
-	if (slice.variation !== 'rightImage1') return null;
+  if (slice.variation !== 'rightImage1') return null;
 
-	return (
-		<Bounded
-			as='section'
-			data-slice-variation={slice.variation === 'rightImage1'}>
-			<Container>
-				<div className='grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-x-20 relative'>
-					<div className='order-1 md:order-2'>
-						<Badge variant='blue'>{badge}</Badge>
-						<PrismicRichText field={title} components={component} />
-						<PrismicRichText field={description} components={component} />
-						<div className='mt-6 flex flex-wrap gap-4 md:mt-8 relative'>
-							<PrismicNextLink field={button}>
-								<Button variant='outline'>{button.text}</Button>
-							</PrismicNextLink>
-							<OutlineX className='w-[100px] h-[100px] absolute top-10 z-10 left-12 lg:top-16 lg:left-16 lg:w-[120px] lg:h-[120px]' />
-						</div>
-					</div>
-					<div className='order-1 md:order-2 relative'>
-						<BlueWaves className='w-[170px] h-[170px] absolute end-px -z-10 -top-24 -right-8 lg:w-[290px] lg:h-[290px] lg:-right-36 lg:-top-32' />
-						<PinkWaves className='w-[200px] h-[200px] absolute -bottom-24 -left-10 lg:w-[330px] lg:h-[330px] lg:-left-1/3 lg:-bottom-32' />
-						<OutlineX className='w-[60px] h-[60px] absolute -bottom-12 -right-4 md:-right-14 lg:[80px] lg:h-[80px]' />
-						<PrismicNextImage
-							field={image}
-							className='w-[335px] object-cover h-[348px] mx-auto object-top rounded-3xl border-4 border-black md:w-[616px] md:h-[640px]'
-							style={{
-								boxShadow:
-									'-8px 12px 0px 0px rgba(8,145,178,1.00), -17px 23px 0px 0px rgba(219,39,119,1.00), -28px 36px 0px 0px rgba(251,191,36,1.00)',
-							}}
-						/>
-					</div>
-					<YellowWaves className='w-[150px] h-[150px] absolute -top-[90px] -z-10 -left-8 md:-top-[124px] lg:w-[250px] lg:h-[250px] lg:-top-[170px] lg:-left-24 xl:-left-32' />
-					<OutlineX className='w-[75px] h-[75px] absolute -top-4 left-56 lg:w-[90px] lg:h-[90px] lg:left-80' />
-				</div>
-			</Container>
-		</Bounded>
-	);
+  return (
+    <Bounded
+      as="section"
+      data-slice-variation={slice.variation === 'rightImage1'}
+    >
+      <Container>
+        <div className="relative grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-x-20">
+          <div className="order-1 md:order-2">
+            <Badge variant="blue">{badge}</Badge>
+            <PrismicRichText field={title} components={component} />
+            <PrismicRichText field={description} components={component} />
+            <div className="relative mt-6 flex flex-wrap gap-4 md:mt-8">
+              <PrismicNextLink field={button}>
+                <Button variant="outline">{button.text}</Button>
+              </PrismicNextLink>
+              <OutlineX className="absolute top-10 left-12 z-10 h-[100px] w-[100px] lg:top-16 lg:left-16 lg:h-[120px] lg:w-[120px]" />
+            </div>
+          </div>
+          <div className="relative order-1 md:order-2">
+            <BlueWaves className="absolute end-px -top-24 -right-8 -z-10 h-[170px] w-[170px] lg:-top-32 lg:-right-36 lg:h-[290px] lg:w-[290px]" />
+            <PinkWaves className="absolute -bottom-24 -left-10 h-[200px] w-[200px] lg:-bottom-32 lg:-left-1/3 lg:h-[330px] lg:w-[330px]" />
+            <OutlineX className="lg:[80px] absolute -right-4 -bottom-12 h-[60px] w-[60px] md:-right-14 lg:h-[80px]" />
+            <PrismicNextImage
+              field={image}
+              className="mx-auto h-[348px] w-[335px] rounded-3xl border-4 border-black object-cover object-top md:h-[640px] md:w-[616px]"
+              style={{
+                boxShadow:
+                  '-8px 12px 0px 0px rgba(8,145,178,1.00), -17px 23px 0px 0px rgba(219,39,119,1.00), -28px 36px 0px 0px rgba(251,191,36,1.00)'
+              }}
+            />
+          </div>
+          <YellowWaves className="absolute -top-[90px] -left-8 -z-10 h-[150px] w-[150px] md:-top-[124px] lg:-top-[170px] lg:-left-24 lg:h-[250px] lg:w-[250px] xl:-left-32" />
+          <OutlineX className="absolute -top-4 left-56 h-[75px] w-[75px] lg:left-80 lg:h-[90px] lg:w-[90px]" />
+        </div>
+      </Container>
+    </Bounded>
+  );
 };
 
 export default RightImage1;

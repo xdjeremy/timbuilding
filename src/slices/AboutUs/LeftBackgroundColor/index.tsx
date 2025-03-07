@@ -18,7 +18,7 @@ import { FC } from 'react';
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
-    <h2 className="rb-5 mb-5 mt-3 text-5xl font-extrabold text-white md:mb-6 md:mt-4 md:text-7xl lg:text-8xl">
+    <h2 className="rb-5 mt-3 mb-5 text-5xl font-extrabold text-white md:mt-4 md:mb-6 md:text-7xl lg:text-8xl">
       {children}
     </h2>
   ),
@@ -28,7 +28,7 @@ const components: JSXMapSerializer = {
     </h3>
   ),
   heading6: ({ children }) => (
-    <h6 className="mb-3 text-md font-bold leading-[1.4] md:mb-4 md:text-xl">
+    <h6 className="text-md mb-3 leading-[1.4] font-bold md:mb-4 md:text-xl">
       {children}
     </h6>
   ),
@@ -38,7 +38,7 @@ const components: JSXMapSerializer = {
     </span>
   ),
   paragraph: ({ children }) => (
-    <p className="mb-6 text-white md:mb-8 md:text-md">{children}</p>
+    <p className="md:text-md mb-6 text-white md:mb-8">{children}</p>
   )
 };
 
@@ -88,20 +88,20 @@ const LeftBackgroundColor: FC<AboutUsProps> = ({ slice }) => {
             </div>
           </div>
           <div className="relative">
-            <div className="absolute -bottom-7 -left-7 h-[72.92px] w-[72.92px] rounded-full border-4 border-black bg-brand-blue"></div>
-            <div className="absolute -bottom-4 left-5 h-[72.92px] w-[72.92px] rounded-full border-4 border-black bg-brand-amber"></div>
-            <div className="absolute -left-4 bottom-4 h-[72.92px] w-[72.92px] rounded-full border-4 border-black bg-brand-telemagenta"></div>
-            <BlueStar className="absolute -right-12 -top-20 -z-10 h-[190px] w-[204px] rotate-[8.33deg]" />
-            <YellowSpark className="absolute -left-4 top-14 h-[51px] w-[51px] rotate-[15deg]" />
-            <BlueSpark className="absolute -bottom-5 right-40 h-[51px] w-[51px]" />
-            <BlackSpark className="absolute -bottom-5 right-10 h-[51px] w-[51px]" />
-            <PinkSpark className="absolute bottom-20 -right-6 h-[51px] w-[51px]" />
+            <div className="bg-brand-blue absolute -bottom-7 -left-7 h-[72.92px] w-[72.92px] rounded-full border-4 border-black"></div>
+            <div className="bg-brand-amber absolute -bottom-4 left-5 h-[72.92px] w-[72.92px] rounded-full border-4 border-black"></div>
+            <div className="bg-brand-telemagenta absolute bottom-4 -left-4 h-[72.92px] w-[72.92px] rounded-full border-4 border-black"></div>
+            <BlueStar className="absolute -top-20 -right-12 -z-10 h-[190px] w-[204px] rotate-[8.33deg]" />
+            <YellowSpark className="absolute top-14 -left-4 h-[51px] w-[51px] rotate-[15deg]" />
+            <BlueSpark className="absolute right-40 -bottom-5 h-[51px] w-[51px]" />
+            <BlackSpark className="absolute right-10 -bottom-5 h-[51px] w-[51px]" />
+            <PinkSpark className="absolute -right-6 bottom-20 h-[51px] w-[51px]" />
             <PrismicNextImage
               field={slice.primary.image}
-              className="neobrutalist-shadow w-full xl:w-[616px] xl:h-[640px] object-cover"
+              className="neobrutalist-shadow w-full object-cover xl:h-[640px] xl:w-[616px]"
             />
           </div>
-          <div className="absolute left-0 top-0 -z-10 h-[37%] w-full border-b-4 border-black bg-brand-blue md:h-full lg:w-1/2 md:border-b-0 md:border-r-4"></div>
+          <div className="bg-brand-blue absolute top-0 left-0 -z-10 h-[37%] w-full border-b-4 border-black md:h-full md:border-r-4 md:border-b-0 lg:w-1/2"></div>
         </div>
       </Container>
     </Bounded>

@@ -54,7 +54,7 @@ const Footer = async () => {
           </div>
         </div>
         <div className="h-px w-full bg-black"></div>
-        <div className="flex flex-col items-start justify-start pb-4 pt-6 text-sm md:flex-row md:items-center md:justify-between md:pb-0 md:pt-8 md:text-center">
+        <div className="flex flex-col items-start justify-start pt-6 pb-4 text-sm md:flex-row md:items-center md:justify-between md:pt-8 md:pb-0 md:text-center">
           <ul className="grid grid-flow-row grid-cols-[max-content] gap-y-4 text-sm md:grid-flow-col md:gap-x-6 md:gap-y-0 lg:justify-center">
             <li className="underline decoration-black underline-offset-1">
               <PrismicNextLink field={settings.data.privacy_policy}>

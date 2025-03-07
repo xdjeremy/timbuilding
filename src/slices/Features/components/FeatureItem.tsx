@@ -3,7 +3,7 @@ import {
   BlackSpark2,
   BlueSpark2,
   PinkStar2,
-  YellowStar,
+  YellowStar
 } from '@/constants/icons';
 import { FC } from 'react';
 
@@ -24,21 +24,23 @@ interface FeatureItemProps {
 
 const components: JSXMapSerializer = {
   heading3: ({ children }) => (
-    <h3 className='mb-5 text-2xl font-bold md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl'>
+    <h3 className="mb-5 text-2xl font-bold md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
       {children}
     </h3>
   ),
-  paragraph: ({ children }) => <p>{children}</p>,
+  paragraph: ({ children }) => <p>{children}</p>
 };
 
-const FeatureItem: FC<FeatureItemProps> = ({ image, title, description, decorations }) => {
+const FeatureItem: FC<FeatureItemProps> = ({
+  image,
+  title,
+  description,
+  decorations
+}) => {
   return (
-    <div className='flex w-full flex-col items-center text-center'>
-      <div className='rb-6 relative mb-6 md:mb-8'>
-        <PrismicNextImage
-          field={image}
-          className='neobrutalist-shadow'
-        />
+    <div className="flex w-full flex-col items-center text-center">
+      <div className="rb-6 relative mb-6 md:mb-8">
+        <PrismicNextImage field={image} className="neobrutalist-shadow" />
         {decorations?.map((decoration, index) => {
           switch (decoration.type) {
             case 'pink-star':
@@ -75,7 +77,9 @@ const FeatureItem: FC<FeatureItemProps> = ({ image, title, description, decorati
         })}
       </div>
       {title && <PrismicRichText field={title} components={components} />}
-      {description && <PrismicRichText field={description} components={components} />}
+      {description && (
+        <PrismicRichText field={description} components={components} />
+      )}
     </div>
   );
 };

@@ -7,7 +7,10 @@ interface MobileMenuPanelProps {
   children: React.ReactNode;
 }
 
-export const MobileMenuPanel: React.FC<MobileMenuPanelProps> = ({ isOpen, children }) => (
+export const MobileMenuPanel: React.FC<MobileMenuPanelProps> = ({
+  isOpen,
+  children
+}) => (
   <AnimatePresence>
     {isOpen && (
       <motion.div
@@ -15,7 +18,7 @@ export const MobileMenuPanel: React.FC<MobileMenuPanelProps> = ({ isOpen, childr
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className='fixed inset-0 z-50 bg-background-primary lg:hidden'
+        className="bg-background-primary fixed inset-0 z-50 lg:hidden"
       >
         {children}
       </motion.div>

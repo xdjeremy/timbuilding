@@ -15,7 +15,7 @@ const Categories = async () => {
         {/* New */}
         <PrismicNextLink
           href={'/blog'}
-          className="px-4 data-[state=active]:border data-[state=active]:border-border-primary data-[state=inactive]:border-transparent data-[state=active]:bg-transparent data-[state=active]:text-neutral-black"
+          className="data-[state=active]:border-border-primary data-[state=active]:text-neutral-black px-4 data-[state=active]:border data-[state=active]:bg-transparent data-[state=inactive]:border-transparent"
         >
           New
         </PrismicNextLink>
@@ -25,7 +25,7 @@ const Categories = async () => {
             <PrismicNextLink
               href={`/blog?category=${document.uid}`}
               key={document.uid}
-              className="px-4 data-[state=active]:border data-[state=active]:border-border-primary data-[state=inactive]:border-transparent data-[state=active]:bg-transparent data-[state=active]:text-neutral-black"
+              className="data-[state=active]:border-border-primary data-[state=active]:text-neutral-black px-4 data-[state=active]:border data-[state=active]:bg-transparent data-[state=inactive]:border-transparent"
               title={`View posts in ${document.data.category}`}
             >
               {document.data.category}
@@ -35,7 +35,7 @@ const Categories = async () => {
         {/* All */}
         <PrismicNextLink
           href={'/blog?category=all'}
-          className="px-4 data-[state=active]:border data-[state=active]:border-border-primary data-[state=inactive]:border-transparent data-[state=active]:bg-transparent data-[state=active]:text-neutral-black"
+          className="data-[state=active]:border-border-primary data-[state=active]:text-neutral-black px-4 data-[state=active]:border data-[state=active]:bg-transparent data-[state=inactive]:border-transparent"
           title="View all posts"
         >
           All

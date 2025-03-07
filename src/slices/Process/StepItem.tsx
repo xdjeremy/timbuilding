@@ -29,7 +29,7 @@ export const StepItem = ({
   dimensions
 }: StepItemProps) => {
   return (
-    <div className="flex flex-col p-3 items-center text-center">
+    <div className="flex flex-col items-center p-3 text-center">
       <div className="mb-5 md:mb-6">{iconComponent(icon)}</div>
       <PrismicRichText field={text} components={component} />
       <PrismicRichText field={subtext} components={component} />

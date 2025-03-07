@@ -57,31 +57,31 @@ const BlogPost = async ({ uid }: { uid: string }) => {
         <div className="rb-12 mb-12 flex flex-col items-start justify-start md:mb-18 lg:mb-20">
           <PrismicNextLink
             href={'/blog'}
-            className="flex items-center gap-2 mb-4"
+            className="mb-4 flex items-center gap-2"
           >
             <ChevronLeftIcon /> All Posts
           </PrismicNextLink>
-          <div className="rb-4 mb-4 flex w-full gap-4 items-center justify-start">
+          <div className="rb-4 mb-4 flex w-full items-center justify-start gap-4">
             <Badge>{category.data.category}</Badge>
             <p className="inline text-sm font-semibold">
               {readingTime(asText(content)).minutes} min read
             </p>
           </div>
         </div>
-        <div className="relative mx-auto mb-8 w-full md:mb-12 lg:mb-8 space-y-10 overflow-visible">
-          <div className="neobrutalist-shadow lg:absolute h-fit p-2 justify-center items-center gap-2 inline-flex cursor-pointer border-4 text-black bg-white rounded-none w-full lg:-rotate-6 lg:max-w-lg lg:-top-12 lg:-left-6">
+        <div className="relative mx-auto mb-8 w-full space-y-10 overflow-visible md:mb-12 lg:mb-8">
+          <div className="neobrutalist-shadow inline-flex h-fit w-full cursor-pointer items-center justify-center gap-2 rounded-none border-4 bg-white p-2 text-black lg:absolute lg:-top-12 lg:-left-6 lg:max-w-lg lg:-rotate-6">
             <PrismicRichText field={title} components={component} />
           </div>
           <PrismicNextImage
             field={image}
-            className="aspect-[5/2] size-full object-cover lg:h-[600px] h-96 neobrutalist-shadow-right"
+            className="neobrutalist-shadow-right aspect-[5/2] size-full h-96 object-cover lg:h-[600px]"
           />
         </div>
-        <div className="flex w-full flex-col items-start justify-between md:flex-row gap-6">
+        <div className="flex w-full flex-col items-start justify-between gap-6 md:flex-row">
           <div className="rb-4 mb-4 flex items-center sm:mb-8 md:mb-0">
             <div className="mr-8 md:mr-10 lg:mr-12">
               <p className="mb-2">Written by</p>
-              <p className="font-medium neobrutalist-shadow rounded-none text-center px-2">
+              <p className="neobrutalist-shadow rounded-none px-2 text-center font-medium">
                 {author.data.author}
               </p>
             </div>
@@ -108,7 +108,7 @@ const BlogPost = async ({ uid }: { uid: string }) => {
 					))}
 				</div> */}
         </div>
-        <div className="mt-20 prose prose-lg mx-auto w-full max-w-lg dark:prose-invert">
+        <div className="prose prose-lg dark:prose-invert mx-auto mt-20 w-full max-w-lg">
           <PrismicRichText field={content} components={Component} />
         </div>
       </Container>

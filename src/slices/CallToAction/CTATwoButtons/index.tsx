@@ -9,7 +9,7 @@ import Container from '@/components/Container';
 
 const component: JSXMapSerializer = {
   heading2: ({ children }) => (
-    <h2 className="mb-3 text-4xl font-extrabold leading-[1.2] md:mb-4 md:text-5xl lg:text-6xl">
+    <h2 className="mb-3 text-4xl leading-[1.2] font-extrabold md:mb-4 md:text-5xl lg:text-6xl">
       {children}
     </h2>
   ),
@@ -51,7 +51,7 @@ const CTATwoButtons: FC<CallToActionProps> = ({ slice }) => {
         field={slice.primary.background_mobile}
       />
       <PrismicNextImage
-        className="absolute -bottom-5 left-0 w-full -z-10 hidden lg:block"
+        className="absolute -bottom-5 left-0 -z-10 hidden w-full lg:block"
         field={slice.primary.background}
       />
     </Bounded>

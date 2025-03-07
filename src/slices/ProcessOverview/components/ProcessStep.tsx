@@ -46,7 +46,7 @@ export const ProcessStep: FC<ProcessStepProps> = ({
   decorations
 }) => {
   return (
-    <div className="neobrutalist-shadow relative flex h-full flex-col items-center px-6 py-4 text-center bg-white">
+    <div className="neobrutalist-shadow relative flex h-full flex-col items-center bg-white px-6 py-4 text-center">
       <div className="mb-5 md:mb-6">{iconComponent(icon)}</div>
       <PrismicRichText field={title} components={component} />
       <PrismicRichText field={description} components={component} />

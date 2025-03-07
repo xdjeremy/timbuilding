@@ -9,13 +9,11 @@ interface ButtonGroupProps {
 
 const ButtonGroup: FC<ButtonGroupProps> = ({ button }) => {
   return (
-    <div className='mt-6 md:mt-8 flex flex-wrap gap-4 lg:gap-24'>
+    <div className="mt-6 flex flex-wrap gap-4 md:mt-8 lg:gap-24">
       <PrismicNextLink field={button}>
-        <Button variant='outline'>{button.text}</Button>
+        <Button variant="outline">{button.text}</Button>
       </PrismicNextLink>
-      <OutlineSpark
-        className='w-[54px] h-[87px] -mt-10 lg:w-[76px] lg:h-[122px] lg:-mt-2'
-      />
+      <OutlineSpark className="-mt-10 h-[87px] w-[54px] lg:-mt-2 lg:h-[122px] lg:w-[76px]" />
     </div>
   );
 };

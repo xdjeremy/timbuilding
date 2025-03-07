@@ -8,18 +8,18 @@ import DefaultFAQs from './Default';
  * Props for `FrequentlyAskedQuestions`.
  */
 export type FrequentlyAskedQuestionsProps =
-	SliceComponentProps<Content.FrequentlyAskedQuestionsSlice>;
+  SliceComponentProps<Content.FrequentlyAskedQuestionsSlice>;
 
 /**
  * Component for "FrequentlyAskedQuestions" Slices.
  */
 const FrequentlyAskedQuestions: FC<FrequentlyAskedQuestionsProps> = (slice) => {
-	return (
-		<>
-			<DefaultFAQs {...slice} />
-			<CenteredFAQs {...slice} />
-		</>
-	);
+  return (
+    <>
+      <DefaultFAQs {...slice} />
+      <CenteredFAQs {...slice} />
+    </>
+  );
 };
 
 export default FrequentlyAskedQuestions;

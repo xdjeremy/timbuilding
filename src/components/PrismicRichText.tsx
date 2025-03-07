@@ -1,25 +1,25 @@
 import {
   PrismicRichText as BasePrismicRichText,
   type PrismicRichTextProps,
-  type JSXMapSerializer,
-} from "@prismicio/react";
-import { PrismicNextLink } from "@prismicio/next";
+  type JSXMapSerializer
+} from '@prismicio/react';
+import { PrismicNextLink } from '@prismicio/next';
 
-import { Heading } from "./Heading";
+import { Heading } from './Heading';
 
 const defaultComponents: JSXMapSerializer = {
   heading1: ({ children }) => (
-    <Heading as="h1" className="mb-7 mt-12 first:mt-0 last:mb-0">
+    <Heading as="h1" className="mt-12 mb-7 first:mt-0 last:mb-0">
       {children}
     </Heading>
   ),
   heading2: ({ children }) => (
-    <Heading as="h2" size="md" className="mb-7 mt-12 first:mt-0 last:mb-0">
+    <Heading as="h2" size="md" className="mt-12 mb-7 first:mt-0 last:mb-0">
       {children}
     </Heading>
   ),
   heading3: ({ children }) => (
-    <Heading as="h3" size="sm" className="mb-7 mt-12 first:mt-0 last:mb-0">
+    <Heading as="h3" size="sm" className="mt-12 mb-7 first:mt-0 last:mb-0">
       {children}
     </Heading>
   ),
@@ -51,7 +51,7 @@ const defaultComponents: JSXMapSerializer = {
     >
       {children}
     </PrismicNextLink>
-  ),
+  )
 };
 
 export function PrismicRichText({

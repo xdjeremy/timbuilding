@@ -69,7 +69,7 @@ const BlogList: FC<BlogListProps> = async ({ searchParams }) => {
           {documents.map((document) => (
             <div
               key={document.id}
-              className="flex size-full flex-col items-center justify-start neobrutalist-shadow"
+              className="neobrutalist-shadow flex size-full flex-col items-center justify-start"
             >
               <PrismicNextLink
                 document={document}
@@ -77,7 +77,7 @@ const BlogList: FC<BlogListProps> = async ({ searchParams }) => {
               >
                 <PrismicNextImage
                   field={document.data.image}
-                  className="aspect-video size-full object-cover rounded-3xl"
+                  className="aspect-video size-full rounded-3xl object-cover"
                 />
               </PrismicNextLink>
               <div className="flex w-full flex-1 flex-col justify-between px-5 py-6 md:p-6 lg:p-6">
@@ -86,7 +86,7 @@ const BlogList: FC<BlogListProps> = async ({ searchParams }) => {
                 </p>
                 <div className="flex w-full flex-col items-start justify-start">
                   <PrismicNextLink document={document} className="mb-2">
-                    <h2 className="text-xl font-bold md:text-2xl cursor-pointer">
+                    <h2 className="cursor-pointer text-xl font-bold md:text-2xl">
                       {asText(document.data.title)}
                     </h2>
                   </PrismicNextLink>

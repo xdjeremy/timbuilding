@@ -30,33 +30,43 @@ export function generateSEO({
   publishedTime,
   modifiedTime,
   author,
-  twitterCardType = 'summary_large_image',
+  twitterCardType = 'summary_large_image'
 }: SEOProps): Metadata {
   // Base URL for absolute URLs
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://timbuilding.dev';
-  
+
   // Ensure URL is absolute
-  const absoluteUrl = url ? (url.startsWith('http') ? url : `${baseUrl}${url.startsWith('/') ? url : `/${url}`}`) : baseUrl;
-  
+  const absoluteUrl = url
+    ? url.startsWith('http')
+      ? url
+      : `${baseUrl}${url.startsWith('/') ? url : `/${url}`}`
+    : baseUrl;
+
   // Ensure image URL is absolute
-  const imageUrl = image?.url 
-    ? (image.url.startsWith('http') ? image.url : `${baseUrl}${image.url.startsWith('/') ? image.url : `/${image.url}`}`)
+  const imageUrl = image?.url
+    ? image.url.startsWith('http')
+      ? image.url
+      : `${baseUrl}${image.url.startsWith('/') ? image.url : `/${image.url}`}`
     : `${baseUrl}/default-og-image.jpg`;
 
   return {
     // Basic metadata
     title: title || 'TimBuilding',
-    description: description || 'TimBuilding - Professional construction and building services',
-    
+    description:
+      description ||
+      'TimBuilding - Professional construction and building services',
+
     // Canonical URL
     alternates: {
-      canonical: absoluteUrl,
+      canonical: absoluteUrl
     },
-    
+
     // Open Graph metadata
     openGraph: {
       title: title || 'TimBuilding',
-      description: description || 'TimBuilding - Professional construction and building services',
+      description:
+        description ||
+        'TimBuilding - Professional construction and building services',
       url: absoluteUrl,
       siteName: 'TimBuilding',
       images: [
@@ -64,8 +74,8 @@ export function generateSEO({
           url: imageUrl,
           width: image?.width || 1200,
           height: image?.height || 630,
-          alt: image?.alt || title || 'TimBuilding',
-        },
+          alt: image?.alt || title || 'TimBuilding'
+        }
       ],
       locale: 'en_US',
       type,
@@ -73,21 +83,23 @@ export function generateSEO({
         article: {
           publishedTime,
           modifiedTime,
-          authors: [author || 'TimBuilding'],
-        },
-      }),
+          authors: [author || 'TimBuilding']
+        }
+      })
     },
-    
+
     // Twitter Card metadata
     twitter: {
       card: twitterCardType,
       title: title || 'TimBuilding',
-      description: description || 'TimBuilding - Professional construction and building services',
+      description:
+        description ||
+        'TimBuilding - Professional construction and building services',
       images: [imageUrl],
       creator: '@timbuilding',
-      site: '@timbuilding',
+      site: '@timbuilding'
     },
-    
+
     // Additional metadata
     robots: {
       index: true,
@@ -97,16 +109,16 @@ export function generateSEO({
         follow: true,
         'max-video-preview': -1,
         'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
+        'max-snippet': -1
+      }
     },
-    
+
     // Verification tags
     verification: {
       // Add your verification tags here
       // google: 'your-google-verification-code',
       // yandex: 'your-yandex-verification-code',
-    },
+    }
   };
 }
 
@@ -121,12 +133,18 @@ export function generateJSONLD({
   type = 'website',
   publishedTime,
   modifiedTime,
-  author,
+  author
 }: SEOProps): string {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://timbuilding.dev';
-  const absoluteUrl = url ? (url.startsWith('http') ? url : `${baseUrl}${url.startsWith('/') ? url : `/${url}`}`) : baseUrl;
-  const imageUrl = image?.url 
-    ? (image.url.startsWith('http') ? image.url : `${baseUrl}${image.url.startsWith('/') ? image.url : `/${image.url}`}`)
+  const absoluteUrl = url
+    ? url.startsWith('http')
+      ? url
+      : `${baseUrl}${url.startsWith('/') ? url : `/${url}`}`
+    : baseUrl;
+  const imageUrl = image?.url
+    ? image.url.startsWith('http')
+      ? image.url
+      : `${baseUrl}${image.url.startsWith('/') ? image.url : `/${image.url}`}`
     : `${baseUrl}/default-og-image.jpg`;
 
   if (type === 'article') {
@@ -140,20 +158,20 @@ export function generateJSONLD({
       dateModified: modifiedTime || publishedTime,
       author: {
         '@type': 'Person',
-        name: author || 'TimBuilding',
+        name: author || 'TimBuilding'
       },
       publisher: {
         '@type': 'Organization',
         name: 'TimBuilding',
         logo: {
           '@type': 'ImageObject',
-          url: `${baseUrl}/logo.png`,
-        },
+          url: `${baseUrl}/logo.png`
+        }
       },
       mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': absoluteUrl,
-      },
+        '@id': absoluteUrl
+      }
     });
   }
 
@@ -162,8 +180,10 @@ export function generateJSONLD({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: title || 'TimBuilding',
-    description: description || 'TimBuilding - Professional construction and building services',
-    url: absoluteUrl,
+    description:
+      description ||
+      'TimBuilding - Professional construction and building services',
+    url: absoluteUrl
   });
 }
 
@@ -172,7 +192,7 @@ export function generateJSONLD({
  */
 export function generateOrganizationSchema(): string {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://timbuilding.dev';
-  
+
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -183,13 +203,13 @@ export function generateOrganizationSchema(): string {
       'https://facebook.com/timbuilding',
       'https://twitter.com/timbuilding',
       'https://instagram.com/timbuilding',
-      'https://linkedin.com/company/timbuilding',
+      'https://linkedin.com/company/timbuilding'
     ],
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+1-123-456-7890',
       contactType: 'customer service',
-      availableLanguage: 'English',
-    },
+      availableLanguage: 'English'
+    }
   });
 }

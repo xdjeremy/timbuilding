@@ -2,18 +2,16 @@ import { PrismicRichText } from '@/components/PrismicRichText';
 import { components } from '@/slices/Header/DefaultHeader/HeaderRichText';
 import { FC } from 'react';
 import { HeaderProps } from '..';
-import Container from "@/components/Container";
+import Container from '@/components/Container';
 
 const PageHeaderNoButtons: FC<HeaderProps> = ({ slice }) => {
   if (slice.variation !== 'pageHeaderNoButtons') return null;
 
   return (
-    <section
-      className="relative text-brand-dark-blue pl-[5%] pr-[2%] pt-16 md:pt-24 lg:pt-28 border-b-4 border-black mx-auto"
-    >
+    <section className="text-brand-dark-blue relative mx-auto border-b-4 border-black pt-16 pr-[2%] pl-[5%] md:pt-24 lg:pt-28">
       <Container className="overflow-hidden">
-        <div className="w-[95%] max-w-lg neobrutalist-shadow-right px-12 py-8 pb-12  translate-y-6 bg-white md:mx-auto">
-          <div className="mb-5 text-6xl text-dark-blue md:mb-6 md:text-9xl lg:text-10xl">
+        <div className="neobrutalist-shadow-right w-[95%] max-w-lg translate-y-6 bg-white px-12 py-8 pb-12 md:mx-auto">
+          <div className="text-dark-blue lg:text-10xl mb-5 text-6xl md:mb-6 md:text-9xl">
             <PrismicRichText
               field={slice.primary.page_header}
               components={components}
@@ -24,11 +22,11 @@ const PageHeaderNoButtons: FC<HeaderProps> = ({ slice }) => {
           </div>
         </div>
       </Container>
-      <div className="absolute inset-0 -z-10 overflow-hidden flex flex-col">
+      <div className="absolute inset-0 -z-10 flex flex-col overflow-hidden">
         {[...Array(7)].map((_, rowIndex) => (
           <span
             key={rowIndex}
-            className="uppercase font-extrabold text-[4rem] text-white tracking-widest overflow-hidden leading-[100%] whitespace-nowrap"
+            className="overflow-hidden text-[4rem] leading-[100%] font-extrabold tracking-widest whitespace-nowrap text-white uppercase"
             style={{ WebkitTextStroke: '1px #444444' }}
           >
             {[...Array(8)].map((_, colIndex) => (

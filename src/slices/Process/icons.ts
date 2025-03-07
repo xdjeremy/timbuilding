@@ -9,7 +9,9 @@ export const iconComponent = (icon: IconType): React.ReactElement => {
     case 'messageCircleMore':
       return React.createElement(MessageCircleMore, { className: 'size-12' });
     case 'penTool':
-      return React.createElement(PenTool, { className: 'size-12 rotate-[280deg]' });
+      return React.createElement(PenTool, {
+        className: 'size-12 rotate-[280deg]'
+      });
     case 'code2':
       return React.createElement(Code2, { className: 'size-12' });
     case 'rocket':

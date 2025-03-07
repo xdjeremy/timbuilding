@@ -17,20 +17,20 @@ export type PricingProps = SliceComponentProps<Content.PricingSlice>;
  * Component for "Pricing" Slices.
  */
 const Pricing: FC<PricingProps> = (slice) => {
-	return (
-		<Bounded yPadding='sm' as='section'>
-			<Container className='relative'>
-				<PricingTitle {...slice} />
-				<div className='grid w-full grid-cols-1 items-center gap-y-12 md:gap-x-12 md:gap-y-16 lg:grid-cols-2 lg:gap-x-20'>
-					<PricingFeatures {...slice} />
-					<PricingCard {...slice} />
-				</div>
-				<HalfPinkWaves className='w-[125px] h-[100px] absolute -top-16 right-10  md:-top-24 lg:w-[180px] lg:h-[160px] lg:-top-28' />
-				<HalfBlueWaves2 className='w-[125px] h-[100px] absolute rotate-180 -bottom-16 -z-10 -left-2 md:-bottom-24 lg:-bottom-28 lg:w-[180px] lg:h-[160px] ' />
-				<YellowWaves3 className='w-[125px] h-[100px] absolute -bottom-16 -z-10 left-32 md:-bottom-24 lg:-bottom-28 lg:w-[180px] lg:h-[160px] lg:left-48' />
-			</Container>
-		</Bounded>
-	);
+  return (
+    <Bounded yPadding="sm" as="section">
+      <Container className="relative">
+        <PricingTitle {...slice} />
+        <div className="grid w-full grid-cols-1 items-center gap-y-12 md:gap-x-12 md:gap-y-16 lg:grid-cols-2 lg:gap-x-20">
+          <PricingFeatures {...slice} />
+          <PricingCard {...slice} />
+        </div>
+        <HalfPinkWaves className="absolute -top-16 right-10 h-[100px] w-[125px] md:-top-24 lg:-top-28 lg:h-[160px] lg:w-[180px]" />
+        <HalfBlueWaves2 className="absolute -bottom-16 -left-2 -z-10 h-[100px] w-[125px] rotate-180 md:-bottom-24 lg:-bottom-28 lg:h-[160px] lg:w-[180px]" />
+        <YellowWaves3 className="absolute -bottom-16 left-32 -z-10 h-[100px] w-[125px] md:-bottom-24 lg:-bottom-28 lg:left-48 lg:h-[160px] lg:w-[180px]" />
+      </Container>
+    </Bounded>
+  );
 };
 
 export default Pricing;

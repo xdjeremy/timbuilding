@@ -1,4 +1,4 @@
-import { exitPreview } from "@prismicio/next";
+import { exitPreview } from '@prismicio/next';
 
 /**
  * This endpoint exits a preview session.

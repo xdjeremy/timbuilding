@@ -19,7 +19,7 @@ import { FC } from 'react';
 
 const component: JSXMapSerializer = {
   heading2: ({ children }) => (
-    <h2 className="mb-5 mt-8 text-5xl font-extrabold md:mb-6 md:text-7xl lg:text-8xl">
+    <h2 className="mt-8 mb-5 text-5xl font-extrabold md:mb-6 md:text-7xl lg:text-8xl">
       {children}
     </h2>
   ),
@@ -30,7 +30,7 @@ const component: JSXMapSerializer = {
   ),
   paragraph: ({ children }) => <p className="md:text-md">{children}</p>,
   strong: ({ children }) => (
-    <span className="bg-brand-blue text-white px-1">{children}</span>
+    <span className="bg-brand-blue px-1 text-white">{children}</span>
   )
 };
 
@@ -56,11 +56,11 @@ const Process: FC<ProcessProps> = ({ slice }) => {
           </div>
         </div>
         <div className="grid place-items-center gap-x-8 gap-y-8 sm:grid-cols-2 md:gap-y-16 lg:mx-auto lg:grid-cols-none">
-          <div className="w-full grid-cols-1 gap-x-20 gap-y-8 md:gap-y-16 grid lg:hidden">
+          <div className="grid w-full grid-cols-1 gap-x-20 gap-y-8 md:gap-y-16 lg:hidden">
             {steps.slice(0, 2).map((step, index) => (
               <div
                 key={index}
-                className="flex flex-col neobrutalist-shadow-left items-center text-center p-3"
+                className="neobrutalist-shadow-left flex flex-col items-center p-3 text-center"
               >
                 {step && (
                   <StepItem
@@ -72,7 +72,7 @@ const Process: FC<ProcessProps> = ({ slice }) => {
               </div>
             ))}
           </div>
-          <div className="order-last w-full sm:col-span-2 lg:order-none lg:col-span-none lg:relative">
+          <div className="lg:col-span-none order-last w-full sm:col-span-2 lg:relative lg:order-none">
             {steps.map((step, index) => {
               const positions = [
                 { className: 'left-14 bottom-3/4' },
@@ -84,7 +84,7 @@ const Process: FC<ProcessProps> = ({ slice }) => {
               return (
                 <div
                   key={index}
-                  className={`hidden lg:block absolute neobrutalist-shadow-left ${positions[index].className} w-[338px] h-[230px]`}
+                  className={`neobrutalist-shadow-left absolute hidden lg:block ${positions[index].className} h-[230px] w-[338px]`}
                 >
                   {step && (
                     <StepItem
@@ -98,18 +98,18 @@ const Process: FC<ProcessProps> = ({ slice }) => {
             })}
             <PrismicNextImage
               field={image}
-              className="h-auto w-full object-cover rounded-3xl border-4 border-black lg:h-[592px] lg:w-[540px] lg:mx-auto"
+              className="h-auto w-full rounded-3xl border-4 border-black object-cover lg:mx-auto lg:h-[592px] lg:w-[540px]"
               style={{
                 boxShadow:
                   '-8px 12px 0px 0px rgba(219,39,119,1.00), -17px 23px 0px 0px rgba(251,191,36,1.00), -28px 36px 0px 0px rgba(8,145,178,1.00)'
               }}
             />
           </div>
-          <div className="w-full grid-cols-1 gap-x-20 gap-y-8 md:gap-y-16 grid lg:hidden">
+          <div className="grid w-full grid-cols-1 gap-x-20 gap-y-8 md:gap-y-16 lg:hidden">
             {steps.slice(2).map((step, index) => (
               <div
                 key={index}
-                className="flex flex-col neobrutalist-shadow-left items-center text-center p-3"
+                className="neobrutalist-shadow-left flex flex-col items-center p-3 text-center"
               >
                 {step && (
                   <StepItem
@@ -122,17 +122,17 @@ const Process: FC<ProcessProps> = ({ slice }) => {
             ))}
           </div>
         </div>
-        <PinkSpring className="w-[130px] h-[166px] absolute top-0.5 right-0.5 -z-10 lg:w-[200px] lg:h-[300px] lg:-top-6" />
-        <OutlineStar2 className="w-[104px] h-[104px] absolute top-16 right-16 -z-10 lg:w-[140px] lg:h-[140px] lg:right-32" />
-        <OutlineStar2 className="w-[77px] h-[77px] absolute top-6 lg:w-[100px] lg:h-[100px] lg:left-24" />
-        <BlueFences className="w-[120px] h-[170px] absolute top-[360px] -left-6 -z-10 lg:w-[190px] lg:h-[220px] lg:top-32" />
-        <OutlineStar2 className="w-[42px] h-[42px] absolute -z-10 top-[350px] left-1/2 lg:w-[60px] lg:h-[60px] lg:top-96" />
-        <OutlineStar2 className="w-[55px] h-[55px] absolute bottom-[52%] -right-0.5 -z-10 lg:w-[65px] lg:h-[65px] lg:bottom-1/3 lg:right-16 xl:right-64" />
-        <OutlineStar2 className="w-[40px] h-[40px] absolute bottom-[40%] -left-2 lg:w-[50px] lg:h-[50px] lg:left-16 xl:left-64" />
-        <YellowRoundedStar className="w-[200px] h-[200px] absolute rotate-[190deg] bottom-1 -z-10 -left-20 lg:w-[280px] lg:h-[280px] lg:-left-24" />
-        <OutlineStar2 className="w-[60px] h-[60px] absolute left-24 bottom-20 -z-10 md:left-32 lg:w-[80px] lg:h-[80px] lg:left-56" />
-        <PinkHalfCircle className="w-[110px] h-[64px] absolute right-12 bottom-0 lg:w-[170px] lg:h-[110px] lg:right-32 lg:-bottom-1.5" />
-        <DarkBlueHalfCircle className="w-[220px]  h-[128px] absolute rotate-[142deg] -right-20 bottom-56 lg:w-[330px] lg:h-[210px] lg:-right-28" />
+        <PinkSpring className="absolute top-0.5 right-0.5 -z-10 h-[166px] w-[130px] lg:-top-6 lg:h-[300px] lg:w-[200px]" />
+        <OutlineStar2 className="absolute top-16 right-16 -z-10 h-[104px] w-[104px] lg:right-32 lg:h-[140px] lg:w-[140px]" />
+        <OutlineStar2 className="absolute top-6 h-[77px] w-[77px] lg:left-24 lg:h-[100px] lg:w-[100px]" />
+        <BlueFences className="absolute top-[360px] -left-6 -z-10 h-[170px] w-[120px] lg:top-32 lg:h-[220px] lg:w-[190px]" />
+        <OutlineStar2 className="absolute top-[350px] left-1/2 -z-10 h-[42px] w-[42px] lg:top-96 lg:h-[60px] lg:w-[60px]" />
+        <OutlineStar2 className="absolute -right-0.5 bottom-[52%] -z-10 h-[55px] w-[55px] lg:right-16 lg:bottom-1/3 lg:h-[65px] lg:w-[65px] xl:right-64" />
+        <OutlineStar2 className="absolute bottom-[40%] -left-2 h-[40px] w-[40px] lg:left-16 lg:h-[50px] lg:w-[50px] xl:left-64" />
+        <YellowRoundedStar className="absolute bottom-1 -left-20 -z-10 h-[200px] w-[200px] rotate-[190deg] lg:-left-24 lg:h-[280px] lg:w-[280px]" />
+        <OutlineStar2 className="absolute bottom-20 left-24 -z-10 h-[60px] w-[60px] md:left-32 lg:left-56 lg:h-[80px] lg:w-[80px]" />
+        <PinkHalfCircle className="absolute right-12 bottom-0 h-[64px] w-[110px] lg:right-32 lg:-bottom-1.5 lg:h-[110px] lg:w-[170px]" />
+        <DarkBlueHalfCircle className="absolute -right-20 bottom-56 h-[128px] w-[220px] rotate-[142deg] lg:-right-28 lg:h-[210px] lg:w-[330px]" />
       </Container>
     </Bounded>
   );

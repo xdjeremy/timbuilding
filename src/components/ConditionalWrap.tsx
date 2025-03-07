@@ -1,4 +1,4 @@
-import type { ElementType, ReactNode } from "react";
+import type { ElementType, ReactNode } from 'react';
 
 type ConditionalWrapProps = {
   condition: boolean;
@@ -12,7 +12,7 @@ type ConditionalWrapProps = {
 export function ConditionalWrap({
   condition,
   wrap: Wrap,
-  children,
+  children
 }: ConditionalWrapProps) {
   return condition ? <Wrap>{children}</Wrap> : children;
 }
