@@ -108,7 +108,7 @@ const BlogPost = async ({ uid }: { uid: string }) => {
 					))}
 				</div> */}
         </div>
-        <div className="prose prose-lg dark:prose-invert mx-auto mt-20 w-full max-w-lg">
+        <div className="mt-20 prose prose-lg mx-auto w-full max-w-lg">
           <PrismicRichText field={content} components={Component} />
         </div>
       </Container>
