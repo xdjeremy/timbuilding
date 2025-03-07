@@ -5,7 +5,7 @@ export const components: JSXMapSerializer = {
   heading3: ({ children }) => <h3 className="font-extrabold">{children}</h3>,
   heading4: ({ children }) => <h4 className="font-extrabold">{children}</h4>,
   strong: ({ children }) => (
-    <span className="text-brand-amber">{children}</span>
+    <span>{children}</span>
   ),
   paragraph: ({ children }) => <p className="md:text-md">{children}</p>
 };
