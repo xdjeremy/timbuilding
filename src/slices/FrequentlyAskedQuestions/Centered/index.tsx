@@ -53,7 +53,7 @@ const CenteredFAQs: FC<FrequentlyAskedQuestionsProps> = ({ slice }) => {
         <div className="mx-auto mt-12 max-w-md text-center md:mt-18 lg:mt-20">
           <PrismicRichText field={bottom_text} components={component} />
           <PrismicNextLink field={button}>
-            <Button className="mt-6 md:mt-8 border-4 border-brand-dark-blue text-black bg-white rounded-md transition-all ease-in-out hover:translate-x-1 hover:-translate-y-1 hover:shadow-[-5px_5px_0px_0px_rgba(0,0,0,1)]">
+            <Button variant="outline" className="mt-6 md:mt-8">
               {button.text}
             </Button>
           </PrismicNextLink>
