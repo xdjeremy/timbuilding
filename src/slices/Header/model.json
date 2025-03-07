@@ -105,7 +105,7 @@
             "label": "Page Header",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading1,heading3"
+            "multi": "heading1"
           }
         },
         "page_sub_header": {

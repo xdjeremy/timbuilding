@@ -2,16 +2,16 @@ import { PrismicRichText } from '@/components/PrismicRichText';
 import { components } from '@/slices/Header/DefaultHeader/HeaderRichText';
 import { FC } from 'react';
 import { HeaderProps } from '..';
+import Container from "@/components/Container";
 
 const PageHeaderNoButtons: FC<HeaderProps> = ({ slice }) => {
   if (slice.variation !== 'pageHeaderNoButtons') return null;
 
   return (
     <section
-      id="relume"
-      className="relative text-brand-dark-blue pl-[5%] pr-[2%] pt-16 md:pt-24 lg:pt-28 border-b-4 border-black"
+      className="relative text-brand-dark-blue pl-[5%] pr-[2%] pt-16 md:pt-24 lg:pt-28 border-b-4 border-black mx-auto"
     >
-      <div className="container overflow-hidden">
+      <Container className="overflow-hidden">
         <div className="w-[95%] max-w-lg neobrutalist-shadow-right px-12 py-8 pb-12  translate-y-6 bg-white md:mx-auto">
           <div className="mb-5 text-6xl text-dark-blue md:mb-6 md:text-9xl lg:text-10xl">
             <PrismicRichText
@@ -23,7 +23,7 @@ const PageHeaderNoButtons: FC<HeaderProps> = ({ slice }) => {
             {slice.primary.page_sub_header}
           </div>
         </div>
-      </div>
+      </Container>
       <div className="absolute inset-0 -z-10 overflow-hidden flex flex-col">
         {[...Array(7)].map((_, rowIndex) => (
           <span

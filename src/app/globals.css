@@ -58,7 +58,9 @@
 	}
 
 	.text-stroke {
-		-webkit-text-stroke: 1px #000000;
+		-webkit-text-stroke: 1px #444444;
+		-webkit-text-fill-color: #ffffff;
+		-webkit-font-smoothing: antialiased;
 	}
 }
 

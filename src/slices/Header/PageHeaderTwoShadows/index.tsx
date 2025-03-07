@@ -9,17 +9,19 @@ const PageHeaderTwoShadows: FC<HeaderProps> = ({ slice }) => {
   if (slice.variation !== 'pageHeaderTwoShadows') return null;
 
   return (
-    <section className="text-brand-dark-blue relative pb-[490px] lg:pb-[530px] p-8 pr-[2%]  border-b-4 border-black">
+    <section className="text-brand-dark-blue relative pb-[470px] lg:pb-[530px] p-8 pr-[2%]  border-b-4 border-black">
       <div className="container flex flex-row">
-        <div className="w-[70%] mx-auto lg:w-[714px] neobrutalist-shadow-no-radius top-24 -left-8 p-8 md:top-12 lg:left-28 lg:p-4 lg:top-28 bg-white absolute">
-          <div className="text-4xl font-extrabold text-brand-dark-blue md:mb-6 md:text-7xl lg:text-10xl lg:p-4 text-center md:text-nowrap">
+        <div
+          className="w-[70%] mx-auto my-auto lg:w-[714px] neobrutalist-shadow-no-radius top-16 -left-8 p-8 md:top-12 lg:left-28 lg:p-4 lg:top-16 xl:left-80 bg-white absolute">
+          <div className="text-4xl text-brand-dark-blue md:mb-6 md:text-7xl lg:text-10xl lg:p-4 text-center">
             <PrismicRichText
               field={slice.primary.page_header}
               components={components}
             />
           </div>
         </div>
-        <div className="w-[70%] mx-auto  lg:w-[714px] right-4 top-64 z-10 neobrutalist-shadow-no-radius p-6 md:p-10 md:top-48 lg:top-72 lg:right-40 bg-white absolute">
+        <div
+          className="w-[70%] mx-auto  lg:w-[714px] right-4 top-52 z-10 neobrutalist-shadow-no-radius p-6 md:p-10 md:top-48 lg:top-64 lg:right-40 xl:right-80  bg-white absolute">
           <div className="text-brand-dark-blue font-extrabold md:text-md lg:text-xl text-pretty">
             {slice.primary.page_sub_header}
           </div>
@@ -41,8 +43,7 @@ const PageHeaderTwoShadows: FC<HeaderProps> = ({ slice }) => {
         {[...Array(9)].map((_, rowIndex) => (
           <span
             key={rowIndex}
-            className="uppercase font-extrabold text-[4rem] text-white tracking-widest overflow-hidden leading-[100%]"
-            style={{ WebkitTextStroke: '1px #444444' }}
+            className="uppercase font-extrabold text-[4rem] text-stroke tracking-widest overflow-hidden leading-[100%]"
           >
             {[...Array(8)].map((_, colIndex) => (
               <PrismicRichText
