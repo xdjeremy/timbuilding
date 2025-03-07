@@ -546,6 +546,113 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, 'page', Lang>;
 
 /**
+ * Item in *Project → Tags*
+ */
+export interface ProjectDocumentDataTagsItem {
+  /**
+   * Text field in *Project → Tags*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.tags[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Content for Project documents
+ */
+interface ProjectDocumentData {
+  /**
+   * Image field in *Project*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Text field in *Project*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Shadow Color field in *Project*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.shadow_color
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  shadow_color: prismic.ColorField;
+
+  /**
+   * Tags field in *Project*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.tags[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  tags: prismic.GroupField<Simplify<ProjectDocumentDataTagsItem>>;
+
+  /**
+   * Image Size field in *Project*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: normal
+   * - **API ID Path**: project.image_size
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  image_size: prismic.SelectField<'normal' | 'large', 'filled'>;
+
+  /**
+   * Floaters field in *Project*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: none
+   * - **API ID Path**: project.floaters
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  floaters: prismic.SelectField<
+    'none' | 'threeCircles' | 'outlineSpark3',
+    'filled'
+  >;
+}
+
+/**
+ * Project document from Prismic
+ *
+ * - **API ID**: `project`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjectDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ProjectDocumentData>,
+    'project',
+    Lang
+  >;
+
+/**
  * Content for Settings documents
  */
 interface SettingsDocumentData {
@@ -629,6 +736,7 @@ export type AllDocumentTypes =
   | BlogListDocument
   | NavigationDocument
   | PageDocument
+  | ProjectDocument
   | SettingsDocument;
 
 /**
@@ -1842,38 +1950,18 @@ export type HighlightSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *Portfolio → Default → Primary → Project*
+ * Item in *Portfolio → Default → Primary → Portfolio Projects*
  */
-export interface PortfolioSliceDefaultPrimaryProjectItem {
+export interface PortfolioSliceDefaultPrimaryPortfolioProjectsItem {
   /**
-   * Image field in *Portfolio → Default → Primary → Project*
+   * Project field in *Portfolio → Default → Primary → Portfolio Projects*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Content Relationship
    * - **Placeholder**: *None*
-   * - **API ID Path**: portfolio.default.primary.project[].image
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **API ID Path**: portfolio.default.primary.portfolio_projects[].project
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  image: prismic.ImageField<never>;
-
-  /**
-   * Text field in *Portfolio → Default → Primary → Project*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: portfolio.default.primary.project[].text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text: prismic.RichTextField;
-
-  /**
-   * Shadow Color field in *Portfolio → Default → Primary → Project*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: portfolio.default.primary.project[].shadow_color
-   * - **Documentation**: https://prismic.io/docs/field#color
-   */
-  shadow_color: prismic.ColorField;
+  project: prismic.ContentRelationshipField<'project'>;
 }
 
 /**
@@ -1891,35 +1979,25 @@ export interface PortfolioSliceDefaultPrimary {
   badge: prismic.KeyTextField;
 
   /**
-   * Title field in *Portfolio → Default → Primary*
+   * Text field in *Portfolio → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: portfolio.default.primary.title
+   * - **API ID Path**: portfolio.default.primary.text
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  title: prismic.RichTextField;
+  text: prismic.RichTextField;
 
   /**
-   * Description field in *Portfolio → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: portfolio.default.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * Project field in *Portfolio → Default → Primary*
+   * Portfolio Projects field in *Portfolio → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: portfolio.default.primary.project[]
+   * - **API ID Path**: portfolio.default.primary.portfolio_projects[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  project: prismic.GroupField<
-    Simplify<PortfolioSliceDefaultPrimaryProjectItem>
+  portfolio_projects: prismic.GroupField<
+    Simplify<PortfolioSliceDefaultPrimaryPortfolioProjectsItem>
   >;
 }
 
@@ -2604,6 +2682,9 @@ declare module '@prismicio/client' {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      ProjectDocument,
+      ProjectDocumentData,
+      ProjectDocumentDataTagsItem,
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
@@ -2659,7 +2740,7 @@ declare module '@prismicio/client' {
       HighlightSliceVariation,
       HighlightSliceDefault,
       PortfolioSlice,
-      PortfolioSliceDefaultPrimaryProjectItem,
+      PortfolioSliceDefaultPrimaryPortfolioProjectsItem,
       PortfolioSliceDefaultPrimary,
       PortfolioSliceVariation,
       PortfolioSliceDefault,

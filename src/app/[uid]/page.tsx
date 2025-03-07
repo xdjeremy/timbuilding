@@ -1,50 +1,53 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { asText } from "@prismicio/client";
-import { SliceZone } from "@prismicio/react";
-import Script from "next/script";
-
-import { createClient } from "@/prismicio";
-import { components } from "@/slices";
-import { generateSEO, generateJSONLD } from "@/components/SEO";
+import { generateJSONLD, generateSEO } from '@/components/SEO';
+import { createClient } from '@/prismicio';
+import { components } from '@/slices';
+import { asText } from '@prismicio/client';
+import { SliceZone } from '@prismicio/react';
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import Script from 'next/script';
 
 type Params = { uid: string };
 
 export async function generateMetadata({
-  params,
+  params
 }: {
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { uid } = await params;
   const client = createClient();
-  const page = await client.getByUID("page", uid).catch(() => notFound());
+  const page = await client.getByUID('page', uid).catch(() => notFound());
 
   return generateSEO({
     title: page.data.meta_title || asText(page.data.title),
     description: page.data.meta_description || null,
-    image: page.data.meta_image?.url ? {
-      url: page.data.meta_image.url,
-      alt: page.data.meta_image.alt || asText(page.data.title),
-      width: page.data.meta_image.dimensions?.width,
-      height: page.data.meta_image.dimensions?.height,
-    } : null,
-    url: `/${uid}`,
+    image: page.data.meta_image?.url
+      ? {
+          url: page.data.meta_image.url,
+          alt: page.data.meta_image.alt || asText(page.data.title),
+          width: page.data.meta_image.dimensions?.width,
+          height: page.data.meta_image.dimensions?.height
+        }
+      : null,
+    url: `/${uid}`
   });
 }
 
 export default async function Page({ params }: { params: Promise<Params> }) {
   const { uid } = await params;
   const client = createClient();
-  const page = await client.getByUID("page", uid).catch(() => notFound());
+  const page = await client.getByUID('page', uid).catch(() => notFound());
 
   const jsonLd = generateJSONLD({
     title: page.data.meta_title || asText(page.data.title),
     description: page.data.meta_description || null,
-    image: page.data.meta_image?.url ? {
-      url: page.data.meta_image.url,
-      alt: page.data.meta_image.alt || asText(page.data.title),
-    } : null,
-    url: `/${uid}`,
+    image: page.data.meta_image?.url
+      ? {
+          url: page.data.meta_image.url,
+          alt: page.data.meta_image.alt || asText(page.data.title)
+        }
+      : null,
+    url: `/${uid}`
   });
 
   return (
@@ -54,7 +57,11 @@ export default async function Page({ params }: { params: Promise<Params> }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLd }}
       />
-      <SliceZone slices={page.data.slices} components={components} />
+      <SliceZone
+        slices={page.data.slices}
+        components={components}
+        context={{ uid: page.uid }}
+      />
     </>
   );
 }
@@ -62,7 +69,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
 export async function generateStaticParams() {
   const client = createClient();
 
-  const pages = await client.getAllByType("page");
+  const pages = await client.getAllByType('page');
 
   return pages.map((page) => {
     return { uid: page.uid };
