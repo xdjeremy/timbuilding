@@ -68,6 +68,12 @@ const InquiryForm: FC<ContactFormProps> = ({ slice }) => {
     const res = await req.json();
 
     if (res.success) {
+      if (typeof window.gtag !== 'undefined') {
+        window.gtag('event', 'conversion_event_request_quote', {
+          event_category: 'Contact Form', 
+          event_label: 'Submission Success'
+        });
+      }
       form.reset();
       setIsSuccess(true);
     } else {

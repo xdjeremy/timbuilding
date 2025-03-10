@@ -86,7 +86,9 @@ export default async function RootLayout({
         <PrismicPreview repositoryName={repositoryName} />
         <Footer />
       </body>
-      <GoogleAnalytics gaId="G-WKHF6PHXL9" />
+      {process.env.NEXT_PUBLIC_GA_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      )}
     </html>
   );
 }
